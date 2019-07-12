@@ -195,7 +195,7 @@ html>body #button a {
 }
 #special-version-controls {
 	position: fixed;
-	background: #d6d6d6;
+	background: #d6d6d6!important;
 	top: 0;
 	width: 100%;
 	font-family: 'PT Sans Narrow', sans-serif;
@@ -233,7 +233,7 @@ html>body #button a {
 	background-position-y: -2px;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-weight: 400;
-	color: #000!important;
+	color: #000;
 	width: 148px!important;
 	background-color: transparent!important;
 	cursor: pointer;
