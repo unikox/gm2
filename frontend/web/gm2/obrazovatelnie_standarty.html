@@ -1,14 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ru"><head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-
-
-
-
-
-
-  
-  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><title>МОУ гимназия № 2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>МОУ гимназия № 2</title>
   
 
   
@@ -48,6 +42,18 @@
 
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body style="direction: ltr;">
+  <div id="special-version-controls" style="display:none">
+        <div id="crfont-style">Размер шрифта: 
+            <a class="line1" onclick="SmallView()" href="#" a-font-size="18" style="font-size:18px">A</a>
+            <a class="line2" onclick="MidleView()" href="#" a-font-size="22" style="font-size:22px">A</a>
+            <a class="line3" onclick="LargeView()" href="#" a-font-size="26" style="font-size:26px">A</a>
+        </div>
+        <div class="line7">Цветовая схема: <a class="line5" onclick="AlterMonoView()" href="#" a-bg-color="#fff" a-color="#000" style="background-color:#fff;color:#000">A</a>
+                             <a class="line6" onclick="MonoView() "href="#" a-bg-color="#000" a-color="#fff" style="background-color:#000;color:#fff">A</a>
+                             
+        </div>
+        <a class="line4" onclick="NormalView()" href="#" id="cr_version_link" original-font-size="15px" original-line-height="15px" original-bg-color="rgb(219, 21, 28)" original-text-color="rgb(255, 255, 255)" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Обычная версия</a>
+</div>
 <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
 
   <tbody>
@@ -135,11 +141,10 @@
           <tr>
             <td class="welcome" height="10" valign="top"> <font face="arial"> Добро пожаловать на сайт МАОУ города </font><font face="arial">Иркутска</font><font face="arial"> гимназии №2<br>
             </font>
-            <div style="text-align: center;">
-<script src="http://kpa-ing.ru/js/KorniloFF.js" type="text/javascript" gr_id="$GROUP_ID$" fixid="1" charset="utf-8" ant="no"></script> 
- <script src="http://kpa-ing.ru/js/Diz_alt.js" type="text/javascript" charset="utf-8"></script>
-<blockquote><a onclick="dizSave('http://kpa-ing.ru/css/Slabovid_uni.css')" href="#" style="font-size: 120%;">Версия для слабовидящих</a> · <a onclick="dizSave()" href="#">Основной дизайн</a></blockquote>
-<br></div>
+                        <div id="slwvw" style="text-align: center;"><br>
+                         <a onclick="SlowView()" href="#" style="font-size: 120%;">Версия для слабовидящих</a>
+                       </div>
+
 </td>
           </tr>
           <tr>
@@ -287,4 +292,6 @@ E-mail: gimnasium2@gmail.com<br>
 пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅ</a><a href="http://ru.anvisionwebtemplates.com/education-templates.html">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅп</a></div>
 
-</body></html>
+</body>
+    <script src="js/slowview.js"></script>
+</html>

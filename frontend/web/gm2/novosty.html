@@ -1,36 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html41/frameset.dtd">
 <html><head><title>МОУ гимназия №2 г. Иркутска - Новости</title>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <link rev="made" href="mailto:h_e_l_g_a@bk.ru">
 
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 
 
@@ -48,7 +24,7 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-
+<link href="css/style.css" rel="stylesheet" type="text/css">
 
 <style type="text/css">
 
@@ -59,7 +35,22 @@ font#mk {font-family:monotype corsiva}
 
 
 </style></head><body background="image/fon_oblaka_.jpg">
+	<div id="special-version-controls" style="display:none">
+        <div id="crfont-style">Размер шрифта: 
+            <a class="line1" onclick="SmallView()" href="#" a-font-size="18" style="font-size:18px">A</a>
+            <a class="line2" onclick="MidleView()" href="#" a-font-size="22" style="font-size:22px">A</a>
+            <a class="line3" onclick="LargeView()" href="#" a-font-size="26" style="font-size:26px">A</a>
+        </div>
+        <div class="line7">Цветовая схема: <a class="line5" onclick="AlterMonoView()" href="#" a-bg-color="#fff" a-color="#000" style="background-color:#fff;color:#000">A</a>
+                             <a class="line6" onclick="MonoView() "href="#" a-bg-color="#000" a-color="#fff" style="background-color:#000;color:#fff">A</a>
+                             
+        </div>
+        <a class="line4" onclick="NormalView()" href="#" id="cr_version_link" original-font-size="15px" original-line-height="15px" original-bg-color="rgb(219, 21, 28)" original-text-color="rgb(255, 255, 255)" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Обычная версия</a>
+</div>
 <h1> Новости</h1>
+    <div id="slwvw" style="text-align: center;"><br>
+       <a onclick="SlowView()" href="#" style="font-size: 120%;">Версия для слабовидящих</a>
+    </div>
 
 
      <big>В октябре месяце в стенах нашей Гимназии открылась осенняя выставка творческих работ обучающихся начальной школы «Закружилась листва золотая…». <a href=""http://www.gymn2.irkutsk.ru/meropr/2011-2012/meropr_vistavka_osen_2011.html">Подробнее...  </a> </big>
@@ -244,4 +235,8 @@ font#mk {font-family:monotype corsiva}
 
 
 <p><b><br> </b></p>
-</body></html>
+</body>   
+ <script src="js/slowview.js"></script>
+
+
+</html>
