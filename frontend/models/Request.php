@@ -22,6 +22,8 @@ class Request extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $verifyCode;
+    
     public static function tableName()
     {
         return 'request';
@@ -47,12 +49,13 @@ class Request extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'email' => 'Email',
-            'subject' => 'Subject',
-            'body' => 'Body',
-            'create_at' => 'Create At',
-            'update_at' => 'Update At',
+            'name' => 'ФИО',
+            'email' => 'Обратный e-mail',
+            'subject' => 'Тема',
+            'body' => 'Сообщение',
+            'verifyCode' => 'Проверочный код',
+            'create_at' => 'Создано',
+            'update_at' => 'Редактировано',
         ];
     }
 
