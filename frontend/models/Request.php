@@ -35,7 +35,7 @@ class Request extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['create_at', 'update_at'], 'required'],
+           //[['create_at', 'update_at'], 'required'],
             [['create_at', 'update_at'], 'integer'],
             [['name', 'email', 'subject'], 'string', 'max' => 64],
             [['body'], 'string', 'max' => 512],
@@ -74,5 +74,9 @@ class Request extends \yii\db\ActiveRecord
     public static function find()
     {
         return new RequestQuery(get_called_class());
+    }
+    public function getRc()
+    {
+        return 'zzzz';
     }
 }

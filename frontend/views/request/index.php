@@ -1,8 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
-
+use app\models\Request;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\RequestSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -19,24 +18,14 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            //'id',
-            'name',
-            'email:email',
-            'subject',
-           // 'body',
-            //'create_at',
-            //'update_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+<h1>
+<?php 
+    $z = Request::find()->all();
+   //$z ="xxx";
+    //print_r( $dataProvider ); 
+    print_r( $z );
+?>
+</h1>
 
 
 </div>

@@ -31,7 +31,7 @@ class Answer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['request_id', 'create_at', 'update_at'], 'required'],
+            //[['request_id', 'create_at', 'update_at'], 'required'],
             [['request_id', 'create_at', 'update_at'], 'integer'],
             [['body'], 'string', 'max' => 512],
             [['request_id'], 'exist', 'skipOnError' => true, 'targetClass' => Request::className(), 'targetAttribute' => ['request_id' => 'id']],
@@ -45,10 +45,10 @@ class Answer extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'request_id' => 'Request ID',
-            'body' => 'Body',
-            'create_at' => 'Create At',
-            'update_at' => 'Update At',
+            'request_id' => 'По сообщению',
+            'body' => 'Ответ',
+            'create_at' => 'Написан',
+            'update_at' => 'Изменен',
         ];
     }
 
