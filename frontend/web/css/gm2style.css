@@ -1,0 +1,11 @@
+.gm2-navbar{
+	/*margin-right: 10%;*/
+	padding: 0; /* Поля вокруг текста */
+    /*border-radius: 10px; /* Уголки */
+    
+	margin-left: 15%;
+	margin-right: 15%;
+    background-image: radial-gradient(#fcbb7b, #c5670c); 
+    color: white;
+    height: 0px;
+    

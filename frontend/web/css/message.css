@@ -1,5 +1,5 @@
 .message_rq{
-
+	margin-right: 10%;
 	padding: 1px; /* Поля вокруг текста */
     border-radius: 10px; /* Уголки */
     font-family: sans-serif; /* Рубленый шрифт */
@@ -8,7 +8,7 @@
     border-bottom: 20px solid white; /* Параметры линии внизу */
 }
 .message_an{
-
+	margin-left: 10%;
 	padding: 1px; /* Поля вокруг текста */
     border-radius: 10px; /* Уголки */
     font-family: sans-serif; /* Рубленый шрифт */
@@ -27,7 +27,8 @@
 }
 .msg_footr{
 	/* margin-left: 10%;*/
-	font-weight: bold; /* Жирное начертание */
+	font-weight: lighter; /* Жирное начертание */
+	font-style:italic
 	border-radius: 10px;
 	width: 100%;
 	color: black; /* Цвет текста */
@@ -41,10 +42,10 @@
 }
 .msg_body{
 	background: #ccc; /* Цвет фона */
-	padding: 5px; /* Добавляем поля */
+	padding: 10px; /* Добавляем поля */
     margin: 0; /* Убираем отступы у параграфа */
     border-top: 0px dotted white; /* Параметры линии вверху */
-    border-radius: 10px 20px 0px 0;
+    /*border-radius: 10px 20px 0px 0;*/
 }
 .msg_mail{
 	margin-left: 3%;

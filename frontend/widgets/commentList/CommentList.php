@@ -35,7 +35,7 @@ class CommentList extends Widget
 	{
 		return "<div class='$this->type' >
 					<div class='msg_footr'><div class='msg_name'>$this->name</div><div class='msg_date'>$this->date</div><div class='msg_mail'>$this->mail</div></div>
-					<div class='msg_body'>$this->body  $this->type </div>
+					<div class='msg_body'>$this->body </div>
 				</div>";	
 	}
 	
