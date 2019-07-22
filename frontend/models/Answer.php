@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
 /**
  * This is the model class for table "answer".
  *
@@ -24,15 +24,26 @@ class Answer extends \yii\db\ActiveRecord
     {
         return 'answer';
     }
-
+    public function behaviors()
+         {
+             return [
+                 'timestamp' => [
+                     'class' => 'yii\behaviors\TimestampBehavior',
+                     'attributes' => [
+                         ActiveRecord::EVENT_BEFORE_INSERT => ['create_at', 'update_at'],
+                         ActiveRecord::EVENT_BEFORE_UPDATE => ['update_at'],
+                     ],
+                 ],
+             ];
+         }
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['request_id', 'create_at', 'update_at'], 'required'],
-            [['request_id', 'create_at', 'update_at'], 'integer'],
+           // [['request_id', 'create_at', 'update_at'], 'required'],
+           // [['request_id', 'create_at', 'update_at'], 'integer'],
             [['body'], 'string', 'max' => 512],
             [['request_id'], 'exist', 'skipOnError' => true, 'targetClass' => Request::className(), 'targetAttribute' => ['request_id' => 'id']],
         ];
@@ -45,10 +56,10 @@ class Answer extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'request_id' => 'Request ID',
-            'body' => 'Body',
-            'create_at' => 'Create At',
-            'update_at' => 'Update At',
+            'request_id' => 'Вопрос',
+            'body' => 'Ответ',
+            'create_at' => 'Ответ от',
+            'update_at' => 'Изменен',
         ];
     }
 

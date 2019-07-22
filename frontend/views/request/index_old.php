@@ -21,7 +21,23 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 <div class="row">
     <div class="col-md-9">
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
 
+            //'id',
+            'name',
+            'email:email',
+            'subject',
+           // 'body',
+            //'create_at',
+            //'update_at',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
     </div>
     <div class="col-md-3">
         <?php echo CommentList::widget() ?>

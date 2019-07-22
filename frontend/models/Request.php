@@ -3,6 +3,11 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
+use yii\base\NotSupportedException;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "request".
@@ -32,10 +37,23 @@ class Request extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public function behaviors()
+         {
+             return [
+                 'timestamp' => [
+                     'class' => 'yii\behaviors\TimestampBehavior',
+                     'attributes' => [
+                         ActiveRecord::EVENT_BEFORE_INSERT => ['create_at', 'update_at'],
+                         ActiveRecord::EVENT_BEFORE_UPDATE => ['update_at'],
+                     ],
+                 ],
+             ];
+         }
+
     public function rules()
     {
         return [
-            [['create_at', 'update_at'], 'required'],
+           // [['create_at', 'update_at'], 'required'],
             [['create_at', 'update_at'], 'integer'],
             [['name', 'email', 'subject'], 'string', 'max' => 64],
             [['body'], 'string', 'max' => 512],
