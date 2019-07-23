@@ -32,7 +32,8 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
     NavBar::begin([
 
         'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
+        //'brandUrl' => Yii::$app->homeUrl,
+        'brandUrl' => 'http://gm2irk.ru/gm2',
         'options' => [
             'class' => 'gm2-navbar navbar-fixed-top',
             'style' => 'color: #000;'

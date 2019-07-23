@@ -1,29 +1,31 @@
 .message_rq{
 	margin-right: 10%;
 	padding: 1px; /* Поля вокруг текста */
-    border-radius: 10px; /* Уголки */
-    font-family: sans-serif; /* Рубленый шрифт */
-    font-size: 90%; /* Размер шрифта */
-	background: #5cb85c;
-    border-bottom: 20px solid white; /* Параметры линии внизу */
+	border-radius: 10px; /* Уголки */
+	font-family: sans-serif; /* Рубленый шрифт */
+	font-size: 90%; /* Размер шрифта */
+	/*background: #5cb85c;*/
+	background: #34b9df;
+	border-bottom: 20px solid white; /* Параметры линии внизу */
 }
 .message_an{
 	margin-left: 10%;
 	padding: 1px; /* Поля вокруг текста */
-    border-radius: 10px; /* Уголки */
-    font-family: sans-serif; /* Рубленый шрифт */
-    font-size: 90%; /* Размер шрифта */
-	background: #df349c;
-    border-bottom: 20px solid white; /* Параметры линии внизу */
+	border-radius: 10px; /* Уголки */
+	font-family: sans-serif; /* Рубленый шрифт */
+	font-size: 90%; /* Размер шрифта */
+	/*background: #df349c;*/
+	background: #f6b26f;
+	border-bottom: 20px solid white; /* Параметры линии внизу */
 }
 .msg_srv{
 
 	padding: 1px; /* Поля вокруг текста */
-    border-radius: 10px; /* Уголки */
-    font-family: sans-serif; /* Рубленый шрифт */
-    font-size: 90%; /* Размер шрифта */
+	border-radius: 10px; /* Уголки */
+	font-family: sans-serif; /* Рубленый шрифт */
+	font-size: 90%; /* Размер шрифта */
 	background: #ff3a18;
-    border-bottom: 20px solid white; /* Параметры линии внизу */
+	border-bottom: 20px solid white; /* Параметры линии внизу */
 }
 .msg_footr{
 	/* margin-left: 10%;*/
@@ -41,11 +43,12 @@
 	text-align: left;
 }
 .msg_body{
-	background: #ccc; /* Цвет фона */
+	background: #f5f5f5;
+	/*background: #ccc; /* Цвет фона */
 	padding: 10px; /* Добавляем поля */
-    margin: 0; /* Убираем отступы у параграфа */
-    border-top: 0px dotted white; /* Параметры линии вверху */
-    /*border-radius: 10px 20px 0px 0;*/
+	margin: 0; /* Убираем отступы у параграфа */
+	border-top: 0px dotted white; /* Параметры линии вверху */
+	/*border-radius: 10px 20px 0px 0;*/
 }
 .msg_mail{
 	margin-left: 3%;
