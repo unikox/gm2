@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                 
                         echo CommentList::widget(  [
-                                            'name'=>'Аминистрация',
+                                            'name'=>'Администрация',
                                             'body' => $anselect->body, 
                                             'mail'=> 'gimnasium2@inbox.com', 
                                             'date' => $an_date,
