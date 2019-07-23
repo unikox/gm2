@@ -58,7 +58,7 @@ class Answer extends \yii\db\ActiveRecord
             'id' => 'ID',
             'request_id' => 'Вопрос',
             'body' => 'Ответ',
-            'create_at' => 'Ответ от',
+            'create_at' => 'Создан',
             'update_at' => 'Изменен',
         ];
     }

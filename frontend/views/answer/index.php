@@ -28,9 +28,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'id',
             'request_id',
-            'body',
-            'create_at',
-            'update_at',
+            [
+              'attribute' => 'body',
+              'contentOptions' => ['class' => 'truncate'],
+            ],
+            //'body',
+            //'create_at',
+            [
+                'attribute'=>'create_at',
+                //'label'=>'Создано',
+                'format'=>'datetime', 
+                'headerOptions' => ['width' => '200'],
+            ],
+            //'update_at',
+            [
+                'attribute'=>'update_at',
+              //  'label'=>'Создано',
+                'format'=>'datetime', 
+                'headerOptions' => ['width' => '200'],
+            ],
+
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

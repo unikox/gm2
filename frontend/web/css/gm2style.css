@@ -5,7 +5,19 @@
     
 	margin-left: 15%;
 	margin-right: 15%;
-    background-image: radial-gradient(#fcbb7b, #c5670c); 
+    background-image: linear-gradient(to bottom, #fcbb7b, #c5670c); 
     color: white;
     height: 0px;
-    
+ }   
+.truncate {
+   max-width: 300px !important;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.truncate:hover{
+   overflow: visible;
+   white-space: normal;
+   width: auto;
+}
