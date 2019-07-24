@@ -37,16 +37,15 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'create_at',
                 //'label'=>'Создано',
-                'format'=>'datetime', 
-                'headerOptions' => ['width' => '200'],
+                'format' => ['date', 'php:d-m-Y H:i:s']
+                //'headerOptions' => ['width' => '200'],
             ],
-            //'update_at',
             [
                 'attribute'=>'update_at',
-              //  'label'=>'Создано',
-                'format'=>'datetime', 
-                'headerOptions' => ['width' => '200'],
+                //'format'=>'datetime', 
+                'format' => ['date', 'php:d-m-Y H:i:s']
             ],
+
 
 
 
