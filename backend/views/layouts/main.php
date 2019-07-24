@@ -52,8 +52,9 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
             . '</li>';
             $menuItems[] = ['label' => 'Сообщения посетителей', 'url' => ['/request']];
             $menuItems[] = ['label' => 'Ответы администрации', 'url' => ['/answer']];
-            $menuItems[] = ['label' => 'Разделы меню', 'url' => ['/menu']];
-            $menuItems[] = ['label' => 'Материалы', 'url' => ['/posts']];
+            //$menuItems[] = ['label' => 'Разделы горизонтального меню', 'url' => ['/menu']];
+            //$menuItems[] = ['label' => 'Разделы вертикального меню', 'url' => ['/menu']];
+            //$menuItems[] = ['label' => 'Материалы', 'url' => ['/posts']];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
