@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AnswerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Answers';
+$this->title = 'Ответы администрации';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="answer-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Answer', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Новый ответ', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,11 +26,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'request_id',
-            'body',
-            'create_at',
-            'update_at',
+            //'id',
+            //'request_id',
+                        [
+                'attribute' => 'request_id',
+                'value' => 'request.name',
+            ],
+            [
+              'attribute' => 'body',
+              'contentOptions' => ['class' => 'truncate'],
+            ],
+            //'body',
+            [
+                'attribute'=>'create_at',
+                //'label'=>'Создано',
+                'format' => ['date', 'php:d-m-Y H:i:s']
+                //'headerOptions' => ['width' => '200'],
+            ],
+            [
+                'attribute'=>'update_at',
+                //'label'=>'Создано',
+                'format' => ['date', 'php:d-m-Y H:i:s']
+                //'headerOptions' => ['width' => '200'],
+            ],
+            //'create_at',
+            //'update_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

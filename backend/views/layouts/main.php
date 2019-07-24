@@ -11,6 +11,7 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+$this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -30,25 +31,29 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
+        //'brandUrl' => Yii::$app->homeUrl,
+        'brandUrl' => 'http://gm2irk.ru/index.php?r=request',
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        //['label' => 'Home', 'url' => ['/site/index']],
+        
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Вход', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+
+        $menuItems[] = '<li>' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton( 'Выход (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()
             . '</li>';
+            $menuItems[] = ['label' => 'Сообщения посетителей', 'url' => ['/request']];
+            $menuItems[] = ['label' => 'Ответы администрации', 'url' => ['/answer']];
+            $menuItems[] = ['label' => 'Разделы меню', 'url' => ['/menu']];
+            $menuItems[] = ['label' => 'Материалы', 'url' => ['/posts']];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],

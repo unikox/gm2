@@ -1,0 +1,23 @@
+.gm2-navbar{
+	/*margin-right: 10%;*/
+	padding: 0; /* Поля вокруг текста */
+    /*border-radius: 10px; /* Уголки */
+    
+	margin-left: 15%;
+	margin-right: 15%;
+    background-image: linear-gradient(to bottom, #fcbb7b, #c5670c); 
+    color: white;
+    height: 0px;
+ }   
+.truncate {
+   max-width: 300px !important;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.truncate:hover{
+   overflow: visible;
+   white-space: normal;
+   width: auto;
+}

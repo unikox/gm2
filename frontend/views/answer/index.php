@@ -43,9 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'update_at',
                 //'format'=>'datetime', 
-                'format' => ['date', 'php:d-m-Y H:i:s']
-            ],
-
+                'format' => ['date', 'php:d-m-Y H:i:s']            ],
+             ],   
 
 
 
