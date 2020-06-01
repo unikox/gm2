@@ -10,8 +10,16 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
+use yii\bootstrap\Carousel;
+use frontend\widgets\siteComponents\pubMenu;
+use app\models\Menuitems;
+
 AppAsset::register($this);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
+//Без слайдера разблокирвать:
+//$this->registerJsFile(Yii::$app->request->baseUrl.'/js/menu.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$mItems=Menuitems::find()->all();
+$mit = new Menuitems;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -27,60 +35,57 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-
-        'brandLabel' => Yii::$app->name,
-        //'brandUrl' => Yii::$app->homeUrl,
-        'brandUrl' => 'http://gm2irk.ru/gm2',
-        'options' => [
-            'class' => 'gm2-navbar navbar-fixed-top',
-            'style' => 'color: #000;'
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Обратная Связь', 'url' => ['/request']],
-        //['label' => 'Home', 'url' => ['/site/index']],
-        //['label' => 'About', 'url' => ['/site/about']],
-        //['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    /*if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }*/
-    echo Nav::widget([
-        'options' => ['class' => 'gm2-navbar navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+<div class="gm2container">
+    <div class="HatBox">
+        <div class="HatBoxItemData">
+            <div class="HatLogo">Логотип</div>
+            <div class="HatData"><h3>Муниципальное автономное образовательное учреждение гимназия № 2 г. Иркутска</h3></div>
+        </div>
+        <div class="HatBoxItem">
+            <div class="HatSlider">
+                <?php
+                    echo Carousel::widget([
+                        'items' => [
+                            
+                            '<img src="/images/slider3.jpg"/>',
+                            
+                            ['content' => '<img src="/images/slider2.jpg"/>'],
+                            
+                            ['content' => '<img src="/images/slider3.jpg"/>'],
+                            ['content' => '<img src="/images/slider1.jpg"/>'],
+                        ]
+                    ]);
+                ?>
+            </div>
+        </div>
     </div>
+    <div class="ContentBox">
+        <div class="ContentItemBox">
+            <div class="ContentItemBaner">Банер</div>
+            <div class="ContentItemMenu">
+                <?php
+
+                    echo pubMenu::widget([
+                        'sections' =>$mit->getSections(),
+                        'subsections' =>$mit->getSubSections(),
+                    ]);
+                  ?>
+
+            </div>
+        </div>
+            
+        <div class="ContentItem"><?= $content ?>
+            
+        </div>
+    </div>
+
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= date('Y') ?> <?= Html::encode(Yii::$app->name) ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-left">&copy; <?= date('Y') ?> <?= Html::encode(Yii::$app->name) ?></p>
+            <p class="pull-right"><?= Yii::powered() ?></p>
+        </div>
+    </footer>
 
 <?php $this->endBody() ?>
 </body>

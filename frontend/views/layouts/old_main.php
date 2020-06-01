@@ -3,13 +3,13 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use frontend\assets\AppAsset;
 use common\widgets\Alert;
-use yii\helpers\Url;
+
 AppAsset::register($this);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 ?>
@@ -30,46 +30,36 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
 <div class="wrap">
     <?php
     NavBar::begin([
+
         'brandLabel' => Yii::$app->name,
         //'brandUrl' => Yii::$app->homeUrl,
-        'brandUrl' => 'http://gm2irk.ru/index.php?r=request',
+        'brandUrl' => 'http://gm2irk.ru/gm2',
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'gm2-navbar navbar-fixed-top',
+            'style' => 'color: #000;'
         ],
     ]);
     $menuItems = [
+        ['label' => 'Обратная Связь', 'url' => ['/request']],
         //['label' => 'Home', 'url' => ['/site/index']],
-        
+        //['label' => 'About', 'url' => ['/site/about']],
+        //['label' => 'Contact', 'url' => ['/site/contact']],
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Вход', 'url' => ['/site/login']];
+    /*if (Yii::$app->user->isGuest) {
+        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-
-        $menuItems[] = '<li>' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton( 'Выход (' . Yii::$app->user->identity->username . ')',
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()
             . '</li>';
-        
-
-            $menuItems[] = ['label' => 'Обратная связь', 'items' =>  [
-
-
-                [ 'label' => 'Ответы администрации', 'url' => Url::to('index.php?r=answer')] ,
-                [ 'label' => 'Сообщения посетителей', 'url' => Url::to('index.php?r=request')] 
-            ]];
-            $menuItems[] = ['label' => 'Содержимое сайта', 'items' =>  [
-                [ 'label' => 'Менеджер разделов меню', 'url' => Url::to('index.php?r=menuitems')] ,
-                [ 'label' => 'Менеджер страниц', 'url' => Url::to('index.php?r=pages')] 
-            ]];
-
-            
-            //$menuItems[] = ['label' => 'Разделы горизонтального меню', 'url' => ['/menu']];
-            //$menuItems[] = ['label' => 'Разделы вертикального меню', 'url' => ['/menu']];
-            //$menuItems[] = ['label' => 'Материалы', 'url' => ['/posts']];
-    }
+    }*/
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'gm2-navbar navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
     NavBar::end();
@@ -86,7 +76,7 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= date('Y') ?> <?= Html::encode(Yii::$app->name) ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
