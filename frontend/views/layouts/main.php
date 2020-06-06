@@ -38,8 +38,8 @@ $mit = new Menuitems;
 <div class="gm2container">
     <div class="HatBox">
         <div class="HatBoxItemData">
-            <div class="HatLogo">Логотип</div>
-            <div class="HatData"><h3>Муниципальное автономное образовательное учреждение гимназия № 2 г. Иркутска</h3></div>
+            <div class="HatLogo"><img class="HatLogImage" src="/images/unesko_img.png"/></div>
+            <div class="HatData"><h3>Муниципальное автономное образовательное учреждение города Иркутска гимназия № 2 </h3></div>
         </div>
         <div class="HatBoxItem">
             <div class="HatSlider">

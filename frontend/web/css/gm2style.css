@@ -48,11 +48,15 @@
 .HatBoxItemData{
     display: flex;
     flex-flow: row;
-
+    padding-bottom:10px;
     justify-content: space-between;
 }
 .HatLogo{
-    background-color: #00ccff;
+}
+.HatLogImage{
+	margin-left: 20%;	
+	width:134px;
+	height:134px;
 }
 .HatData{
     width: 48%;
