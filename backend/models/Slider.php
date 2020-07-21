@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use yii\web\UploadedFile;
 /**
  * This is the model class for table "slider".
  *
@@ -20,6 +20,8 @@ class Slider extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $imageFile;
+
     public static function tableName()
     {
         return 'slider';
@@ -33,6 +35,7 @@ class Slider extends \yii\db\ActiveRecord
         return [
             [['slider_id', 'position', 'posted'], 'integer'],
             [['item_name', 'url', 'title'], 'string', 'max' => 255],
+            [['imageFile'], 'file',  'extensions' => 'png, jpg'],
         ];
     }
 
@@ -59,5 +62,14 @@ class Slider extends \yii\db\ActiveRecord
     public static function find()
     {
         return new SliderQuery(get_called_class());
+    }
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

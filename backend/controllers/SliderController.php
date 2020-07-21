@@ -8,6 +8,7 @@ use app\models\SliderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * SliderController implements the CRUD actions for Slider model.
@@ -67,6 +68,8 @@ class SliderController extends Controller
         $model = new Slider();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->upload();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
