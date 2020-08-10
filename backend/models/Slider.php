@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\web\UploadedFile;
+use yii\helpers\Url;
 /**
  * This is the model class for table "slider".
  *
@@ -35,7 +36,7 @@ class Slider extends \yii\db\ActiveRecord
         return [
             [['slider_id', 'position', 'posted'], 'integer'],
             [['item_name', 'url', 'title'], 'string', 'max' => 255],
-            [['imageFile'], 'file',  'extensions' => 'png, jpg'],
+            [['imageFile'], 'file',  'extensions' => 'png, jpg, jpeg, gif']
         ];
     }
 
@@ -47,7 +48,7 @@ class Slider extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'slider_id' => 'Slider ID',
-            'item_name' => 'Комбинация',
+            'item_name' => 'Имя элемента',
             'url' => 'Ссылка',
             'title' => 'Всплывающая подсказка',
             'position' => 'Позиция',
@@ -63,9 +64,15 @@ class Slider extends \yii\db\ActiveRecord
     {
         return new SliderQuery(get_called_class());
     }
+
+
     public function upload()
     {
         if ($this->validate()) {
+
+            //$this->item_name= $this->imageFile->baseName . '.' . $this->imageFile->extension;
+            $this->url =Url::base( true) . '/uploads/'.$this->imageFile->baseName . '.' . $this->imageFile->extension;
+            $this->save();
             $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
             return true;
         } else {

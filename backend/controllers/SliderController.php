@@ -68,8 +68,12 @@ class SliderController extends Controller
         $model = new Slider();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+
             $model->upload();
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
