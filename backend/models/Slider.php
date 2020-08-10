@@ -71,12 +71,16 @@ class Slider extends \yii\db\ActiveRecord
         if ($this->validate()) {
 
             //$this->item_name= $this->imageFile->baseName . '.' . $this->imageFile->extension;
-            $this->url =Url::base( true) . '/uploads/'.$this->imageFile->baseName . '.' . $this->imageFile->extension;
-            $this->save();
-            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+
+            if($this->imageFile){
+                $this->url =Url::base( true) . '/uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+                $this->save();
+                $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            }
             return true;
         } else {
             return false;
         }
     }
+
 }

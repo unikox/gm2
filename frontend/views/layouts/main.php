@@ -10,16 +10,19 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
-use yii\bootstrap\Carousel;
+
 use frontend\widgets\siteComponents\pubMenu;
+use frontend\widgets\siteComponents\pubSlider;
 use app\models\Menuitems;
+use app\models\Slider;
 
 AppAsset::register($this);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 //Без слайдера разблокирвать:
 //$this->registerJsFile(Yii::$app->request->baseUrl.'/js/menu.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-$mItems=Menuitems::find()->all();
+$mItems = Menuitems::find()->all();
 $mit = new Menuitems;
+$slider = new Slider();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -44,17 +47,10 @@ $mit = new Menuitems;
         <div class="HatBoxItem">
             <div class="HatSlider">
                 <?php
-                    echo Carousel::widget([
-                        'items' => [
-                            
-                            '<img src="/images/slider3.jpg"/>',
-                            
-                            ['content' => '<img src="/images/slider2.jpg"/>'],
-                            
-                            ['content' => '<img src="/images/slider3.jpg"/>'],
-                            ['content' => '<img src="/images/slider1.jpg"/>'],
-                        ]
-                    ]);
+                echo pubSlider::widget([
+                    'slider_items' =>$slider -> getSliderItems('General'),
+
+                ]);
                 ?>
             </div>
         </div>

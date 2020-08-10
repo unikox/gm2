@@ -1,43 +1,33 @@
 <?php
 
-namespace frontend\widgets\commentList;
+namespace frontend\widgets\siteComponents;
 use yii\base\Widget;
+use yii\bootstrap\Carousel;
 //$this->registerCssFile("@web/css/message.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 
-class CommentList extends Widget
+class pubSlider extends Widget
 {
-	public $type;
-	public $name;
-	public $body; 
-	public $mail;
-	public $date;
+	public $slider_items;
+
 	public function init()
 	{
 		parent::init();
 
-		if ($this->name === null) {
-			$this->name ='Аноним';
+		if ($this->slider_items === null) {
+			$this->slider_items ='Слайдер не настроен';
 		}
-		if ($this->body === null) {
-			$this->body = 'Пустое сообщение';
-		}
-		if ($this->mail === null) {
-			$this->mail = 'Без e-mail';
-		}
-		if ($this->date === null) {
-			$this->date = 'Без даты';
-		}
-		if ($this->type === 'null' ) {
-			$this->type = 'msg_srv';
-		}
+
 	}
 	public function run()
 	{
-		return "<div class='$this->type' >
-					<div class='msg_footr'><div class='msg_name'>$this->name</div><div class='msg_date'>$this->date</div></div>
-					<div class='msg_body'>$this->body </div>
-				</div>";
-//	<div class='msg_mail'>$this->mail</div>
+
+        $ITM = array();
+        foreach ($this->slider_items as $sitems){
+           $content_item = ['content' => '<img src="'. $sitems['url'] .' "/>'];
+           array_push($ITM, $content_item);
+        }
+
+        echo Carousel::widget(['items' => $ITM,]);
 	}
 	
 }
