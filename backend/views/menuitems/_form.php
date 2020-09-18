@@ -18,8 +18,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'parent_id')->textInput() ?>
 
+    <?= $form->field($model, 'url')->textInput() ?>
+    <h5>Необходимо указать url если раздел имеет собственную страницу</h5>
+
+
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

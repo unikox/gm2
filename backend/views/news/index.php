@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\MenuitemsSearch */
+/* @var $searchModel app\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Разделы меню';
+$this->title = 'Менеджер новостей';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="menuitems-index">
+<div class="news-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Добавить раздел меню', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить новость', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,10 +27,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
-            'position',
-            'parent_id',
-            //'url',
+            'create_at:date',
+            'update_at:date',
+            'catnews',
+            'title',
+            //'shortbody:ntext',
+            //'body:ntext',
+            //'archived',
+            //'posted',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
