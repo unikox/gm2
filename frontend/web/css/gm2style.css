@@ -1,3 +1,6 @@
+.index-box{
+    
+}
 .gm2-navbar{
 	/*margin-right: 10%;*/
 	padding: 0; /* Поля вокруг текста */
@@ -94,6 +97,7 @@
 .ContentItem{
     margin: 0 auto;
     width: 80%;
+    padding: 0px 0px 10px 10px;
 }
 .pages-view{
     padding-left: 5%;
@@ -380,3 +384,4 @@ a:focus {
 .menu-mainmenu ul ul a.active {
     color: #397ad0;
 }
+

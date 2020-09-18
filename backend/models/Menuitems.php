@@ -11,6 +11,7 @@ use Yii;
  * @property string $name
  * @property int $position
  * @property int $parent_id
+ * @property string $url
  *
  * @property Pages[] $pages
  */
@@ -45,6 +46,7 @@ class Menuitems extends \yii\db\ActiveRecord
             'name' => 'Имя раздела',
             'position' => 'Позиция',
             'parent_id' => 'Родитель',
+            'url' => 'Адрес',
         ];
     }
 

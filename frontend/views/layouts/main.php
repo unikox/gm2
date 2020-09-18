@@ -60,7 +60,7 @@ $slider = new Slider();
             <div class="ContentItemBaner">Банер</div>
             <div class="ContentItemMenu">
                 <?php
-
+                    //var_dump($mit->getSections());
                     echo pubMenu::widget([
                         'sections' =>$mit->getSections(),
                         'subsections' =>$mit->getSubSections(),

@@ -4,7 +4,7 @@ namespace frontend\widgets\siteComponents;
 use yii\base\Widget;
 
 
-class pubMenu extends Widget
+class pubNews extends Widget
 {
 
 	public $name;

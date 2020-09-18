@@ -45,6 +45,7 @@ class Menuitems extends \yii\db\ActiveRecord
             'name' => 'Name',
             'position' => 'Position',
             'parent_id' => 'Parent ID',
+            'url'=> 'Link',
         ];
     }
 
@@ -100,4 +101,5 @@ class Menuitems extends \yii\db\ActiveRecord
         $subsections = Yii::$app->db->createCommand($sql)->queryAll();
         return $subsections;
     }
+
 }

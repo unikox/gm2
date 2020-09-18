@@ -59,6 +59,7 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
                 [ 'label' => 'Сообщения посетителей', 'url' => Url::to('index.php?r=request')] 
             ]];
             $menuItems[] = ['label' => 'Содержимое сайта', 'items' =>  [
+                [ 'label' => 'Настройка главной страницы', 'url' => Url::to('index.php?r=hpage%2Fupdate&id=1')] ,
                 [ 'label' => 'Менеджер разделов меню', 'url' => Url::to('index.php?r=menuitems')] ,
                 [ 'label' => 'Менеджер страниц', 'url' => Url::to('index.php?r=pages')],
                 [ 'label' => 'Менеджер слайдеров', 'url' => Url::to('index.php?r=slider')],
