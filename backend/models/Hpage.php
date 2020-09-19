@@ -57,7 +57,7 @@ class Hpage extends \yii\db\ActiveRecord
             'id' => 'ID',
             'create_at' => 'Создан',
             'update_at' => 'Изменен',
-            'body' => 'Матерьял',
+            'body' => 'Материал',
             'actual' => 'Использовать',
         ];
     }

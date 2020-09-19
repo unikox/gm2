@@ -1,5 +1,10 @@
 .index-box{
-    
+    background-color: #fff2f2;
+    border: 1px solid #dfe7ec;
+    margin: 0 0 20px 0;
+    width: 98%;
+    border-left: 4px solid #fe5e5e;
+    padding: 10px 10px 10px 10px;
 }
 .gm2-navbar{
 	/*margin-right: 10%;*/
