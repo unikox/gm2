@@ -33,14 +33,14 @@
     display: flex;
     flex-flow: column;
     background-color: #fff;
-    width: 62%;
+    width: 60%;
     margin: 0 auto;
 }
 .footer{
      display: flex;
     flex-flow: column;
     background-color: #fff;
-    width: 62%;
+    width: 60%;
     margin: 0 auto;   
 }
 .HatBox{
@@ -64,6 +64,8 @@
 .HatBaner{
 	width:100%;
 	height:100%;
+	left: 2%;
+	position: relative;
 }
 .HatLogImage{
 	margin-left: 20%;	
@@ -77,8 +79,10 @@
     font-size: 13px;
     font-weight: 500;
 }
+.HatDataItem{
+	line-height: 0.5;
+}
 .HatSlider{
-    width:100%;
     height: 190px;
 }
 .carousel-indicators{
@@ -95,7 +99,6 @@
 }
 .ContentItemBaner{
     width:100%;
-    background-color: greenyellow;
 }
 .ContentItemBox{
     width:20%;

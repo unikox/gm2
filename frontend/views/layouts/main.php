@@ -42,7 +42,7 @@ $slider = new Slider();
     <div class="HatBox">
         <div class="HatBoxItemData">
             <div class="HatLogo"><img class="HatLogImage" src="/images/unesko_img.png"/></div>
-            <div class="HatData"><h3>Муниципальное автономное общеобразовательное</h3><h3> учреждение города Иркутска гимназия № 2 </h3></div>
+            <div class="HatData"><h3 class="HatDataItem">Муниципальное автономное общеобразовательное</h3><h3 class="HatDataItem"> учреждение города Иркутска гимназия № 2 </h3></div>
         </div>
         <div class="HatBoxItem">
             <div class="HatSlider">
