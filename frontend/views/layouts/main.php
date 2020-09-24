@@ -42,7 +42,7 @@ $slider = new Slider();
     <div class="HatBox">
         <div class="HatBoxItemData">
             <div class="HatLogo"><img class="HatLogImage" src="/images/unesko_img.png"/></div>
-            <div class="HatData"><h3>Муниципальное автономное образовательное учреждение города Иркутска гимназия № 2 </h3></div>
+            <div class="HatData"><h3>Муниципальное автономное общеобразовательное</h3><h3> учреждение города Иркутска гимназия № 2 </h3></div>
         </div>
         <div class="HatBoxItem">
             <div class="HatSlider">
@@ -57,7 +57,7 @@ $slider = new Slider();
     </div>
     <div class="ContentBox">
         <div class="ContentItemBox">
-            <div class="ContentItemBaner">Банер</div>
+            <div class="ContentItemBaner"><a href="http://gm2irk.ru/index.php?r=request" ><img class="HatBaner" src="http://gm2irk.ru/images/vopros.png"></a></div>
             <div class="ContentItemMenu">
                 <?php
                     //var_dump($mit->getSections());
