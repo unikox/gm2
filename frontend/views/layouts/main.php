@@ -20,6 +20,9 @@ AppAsset::register($this);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 //Без слайдера разблокирвать:
 //$this->registerJsFile(Yii::$app->request->baseUrl.'/js/menu.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+
+$this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $mItems = Menuitems::find()->all();
 $mit = new Menuitems;
 $slider = new Slider();
@@ -34,6 +37,7 @@ $slider = new Slider();
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -77,10 +81,27 @@ $slider = new Slider();
 
 </div>
     <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; <?= date('Y') ?> <?= Html::encode(Yii::$app->name) ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
+
+        <p class="container">
+            <div class="footerdatabox">
+                <p class="pull-left">
+                    <?= date('d.m.Y') ?>
+                </p>
+                <p class="pull-left">&copy; <?= Html::encode('МАОУ города Иркутска гимназия № 2') ?></p>
+                <p class="pull-left">
+                    <?= Html::encode('Телефон-факс: (3952)36-90-60') ?>
+                </p>
+                <p class="pull-left">
+                    <?= Html::encode('E-mail: gimnasium2@inbox.com') ?>
+                </p>
+            </div>
+        </p>
+
+        <div class="gym_map">
+            <div id="map" style="width:710px; height:300px"></div>
         </div>
+
+
     </footer>
 
 <?php $this->endBody() ?>

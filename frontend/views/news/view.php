@@ -7,30 +7,19 @@ use yii\widgets\DetailView;
 /* @var $model app\models\News */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'News'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Новости'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="news-view">
+    <?= date("d.m.Y",$model->create_at) ?>
+    <h3><?= Html::encode($this->title) ?></h3>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="news-view-body"><p> <?php  printf($model->body); ?> </p> </div>
 
-    <p>
-    </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            #'id',
-            #'create_at',
-            #'update_at',
-            #'catnews',
-            #'title',
-            #'shortbody:ntext',
-            'body:html',
-            #'archived',
-            #'posted',
-        ],
-    ]) ?>
 
 </div>
+

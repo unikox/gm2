@@ -1,3 +1,28 @@
+.news__block{
+
+}
+.news-index{
+
+}
+.news_box{
+    position: relative;
+}
+.news-view{
+    text-align: center;
+}
+.news_box_title{
+    color: #397ad0;
+    font-size: 20px;
+}
+.news-view-body{
+    text-align: left;
+}
+
+.gym_map{
+
+    width:710px;
+    padding-bottom: 30px;
+}
 .index-box{
     background-color: #fff2f2;
     border: 1px solid #dfe7ec;
@@ -35,13 +60,24 @@
     background-color: #fff;
     width: 60%;
     margin: 0 auto;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
 }
 .footer{
      display: flex;
-    flex-flow: column;
+    flex-flow: wrap;
+    justify-content: space-around;
     background-color: #fff;
     width: 60%;
-    margin: 0 auto;   
+    margin: 0 auto;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+    background-color: #eef1f3;
+    height:30%;
+}
+.footerdatabox{
+    position: relative;
+    left:20px;
+    display: flex;
+    flex-flow: column;
 }
 .HatBox{
     
