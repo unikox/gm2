@@ -60,6 +60,7 @@
     background-color: #fff;
     width: 60%;
     margin: 0 auto;
+    padding-bottom:2%;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
 }
 .footer{
@@ -83,6 +84,8 @@
     
     display: flex;
     flex-flow: column;
+    position: relative;
+    bottom: -15px;
 }
 .HatBoxItem{
     display: flex;
@@ -92,7 +95,7 @@
 .HatBoxItemData{
     display: flex;
     flex-flow: row;
-    padding-bottom:10px;
+    padding-bottom:15px;
     justify-content: space-between;
 }
 .HatLogo{
