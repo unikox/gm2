@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= date("d.m.Y",$model->create_at) ?>
     <h3><?= Html::encode($this->title) ?></h3>
 
-    <div class="news-view-body"><p> <?php  printf($model->body); ?> </p> </div>
+    <div class="news-view-body"><p> <?php  echo $model->body; ?> </p> </div>
 
 
 
