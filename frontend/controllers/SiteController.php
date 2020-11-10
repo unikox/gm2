@@ -14,6 +14,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use app\models\News;
+use app\models\NewsSearch;
 
 /**
  * Site controller
@@ -74,7 +76,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('./index');
+        $searchNewsModel = new NewsSearch();
+        $dataProviderNews = $searchNewsModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchNewsModel' => $searchNewsModel,
+            'dataNewsProvider' => $dataProviderNews,
+        ]);
     }
 
     /**
