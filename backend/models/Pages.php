@@ -15,6 +15,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $page_body
  * @property int $created_at
  * @property int $updated_at
+ * @property boolean $gpost
  *
  * @property Menuitems $menuitem
  */
@@ -49,7 +50,7 @@ class Pages extends \yii\db\ActiveRecord
         return [
             [['menuitem_id', 'created_at', 'updated_at'], 'integer'],
             [['page_body'], 'string'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'gpost'], 'string', 'max' => 255],
             [['menuitem_id'], 'exist', 'skipOnError' => true, 'targetClass' => Menuitems::className(), 'targetAttribute' => ['menuitem_id' => 'id']],
         ];
     }
@@ -66,6 +67,7 @@ class Pages extends \yii\db\ActiveRecord
             'page_body' => 'Содержимое',
             'created_at' => 'Создано',
             'updated_at' => 'Изменeно',
+            'gpost' => 'Поместить в главное меню',
         ];
     }
 
