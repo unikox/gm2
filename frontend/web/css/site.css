@@ -5,6 +5,15 @@ body {
     font-family: Arial,Helvetica,sans-serif;
     color: #484c51;
 }
+.hide, .hide + p, .hide + li{
+    display: none;
+}
+input.hide:checked + p {
+    display: block;
+}
+input.hide:checked + li{
+    display: list-item;
+}
 
 .wrap {
     min-height: 100%;
@@ -197,3 +206,4 @@ a.desc:after {
 .news-view{
     width: 98%;
 }
+

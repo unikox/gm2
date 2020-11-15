@@ -29,6 +29,7 @@ $promt_menuitems = [ 'prompt' => 'Выбор раздела' ];
             'editorOptions' => [
                 'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
                 'inline' => false, //по умолчанию false
+                'allowedContent' => true,
             ],
         ]);
     ?>

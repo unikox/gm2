@@ -23,6 +23,7 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
 
 $this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl.'/js/lists.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $mItems = Menuitems::find()->all();
 $mit = new Menuitems;
 $slider = new Slider();
