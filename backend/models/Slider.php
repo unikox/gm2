@@ -12,6 +12,7 @@ use yii\helpers\Url;
  * @property int $slider_id
  * @property string $item_name
  * @property string $url
+ * @property string $url_dst
  * @property string $title
  * @property int $position
  * @property int $posted
@@ -35,7 +36,7 @@ class Slider extends \yii\db\ActiveRecord
     {
         return [
             [['slider_id', 'position', 'posted'], 'integer'],
-            [['item_name', 'url', 'title'], 'string', 'max' => 255],
+            [['item_name', 'url', 'title', 'url_dst'], 'string', 'max' => 255],
             [['imageFile'], 'file',  'extensions' => 'png, jpg, jpeg, gif']
         ];
     }
@@ -50,6 +51,7 @@ class Slider extends \yii\db\ActiveRecord
             'slider_id' => 'Slider ID',
             'item_name' => 'Имя элемента',
             'url' => 'Ссылка',
+            'url_dst' => 'Ссылка для перехода',
             'title' => 'Всплывающая подсказка',
             'position' => 'Позиция',
             'posted' => 'Показывать',

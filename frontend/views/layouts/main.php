@@ -51,10 +51,10 @@ $slider = new Slider();
         <div class="HatBoxItem">
             <div class="HatSlider">
                 <?php
-                echo pubSlider::widget([
-                    'slider_items' =>$slider -> getSliderItems('General'),
+                    echo pubSlider::widget([
+                        'slider_items' =>$slider -> getSliderItems('General'),
 
-                ]);
+                    ]);
                 ?>
             </div>
         </div>
@@ -66,9 +66,11 @@ $slider = new Slider();
                 <?php
                     //var_dump($mit->getSections());
                     echo pubMenu::widget([
-                        'sections' =>$mit->getSections(),
-                        'subsections' =>$mit->getSubSections(),
+                        'sections' => $mit->getSections(),
+                        'subsections' => $mit->getSubSections(),
+                        'sectionsAlone' => $mit->getSubSectionsAlone(),
                     ]);
+
                   ?>
 
             </div>

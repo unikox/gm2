@@ -46,6 +46,7 @@ class Slider extends \yii\db\ActiveRecord
             'slider_id' => 'Slider ID',
             'item_name' => 'Item Name',
             'url' => 'Url',
+            'url_dst' => 'Ссылка для перехода',
             'title' => 'Title',
             'position' => 'Position',
             'posted' => 'Posted',

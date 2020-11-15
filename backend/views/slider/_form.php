@@ -15,6 +15,7 @@ use yii\widgets\ActiveForm;
 
 
     <?= $form->field($model, 'item_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'url_dst')->textInput(['maxlength' => true]) ?>
 
 
 

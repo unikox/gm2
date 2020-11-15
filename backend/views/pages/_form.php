@@ -23,6 +23,7 @@ $promt_menuitems = [ 'prompt' => 'Выбор раздела' ];
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'menuitem_id')->dropDownList($items_menuitems,$promt_menuitems) ?>
+    <?= $form->field($model, 'gpost')->checkbox() ?>
         <?php
         echo $form->field($model, 'page_body')->widget(CKEditor::className(),[
             'editorOptions' => [

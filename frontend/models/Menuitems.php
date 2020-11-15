@@ -97,7 +97,12 @@ class Menuitems extends \yii\db\ActiveRecord
         return $sections;
     }
     public function getSubSections(){
-        $sql = 'SELECT `id`, `menuitem_id`,`name` FROM `pages` ';
+        $sql = 'SELECT `id`, `gpost`, `menuitem_id`,`name` FROM `pages` ';
+        $subsections = Yii::$app->db->createCommand($sql)->queryAll();
+        return $subsections;
+    }
+    public function getSubSectionsAlone(){
+        $sql = 'SELECT `id`, `gpost`, `menuitem_id`,`name` FROM `pages` WHERE `gpost` = 1 ';
         $subsections = Yii::$app->db->createCommand($sql)->queryAll();
         return $subsections;
     }

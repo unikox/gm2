@@ -23,7 +23,8 @@ class pubSlider extends Widget
 
         $ITM = array();
         foreach ($this->slider_items as $sitems){
-           $content_item = ['content' => '<img src="'. $sitems['url'] .' "/>'];
+           $content_item = ['content' => '<a href="'. $sitems['url_dst'] . '"><img src="'. $sitems['url'] .' "/></a>'];
+           //$content_item = ['content' => '<img src="'. $sitems['url'] .' "/>'];
            array_push($ITM, $content_item);
         }
 
