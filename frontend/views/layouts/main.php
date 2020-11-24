@@ -13,7 +13,10 @@ use common\widgets\Alert;
 
 use frontend\widgets\siteComponents\pubMenu;
 use frontend\widgets\siteComponents\pubSlider;
+use frontend\widgets\siteComponents\pubHeader;
+use frontend\widgets\siteComponents\pubFooter;
 use app\models\Menuitems;
+use app\models\Template;
 use app\models\Slider;
 
 AppAsset::register($this);
@@ -45,9 +48,14 @@ $slider = new Slider();
 
 <div class="gm2container">
     <div class="HatBox">
+
         <div class="HatBoxItemData">
-            <div class="HatLogo"><img class="HatLogImage" src="/images/unesko_img.png"/></div>
-            <div class="HatData"><h3 class="HatDataItem">Муниципальное автономное общеобразовательное</h3><h3 class="HatDataItem"> учреждение города Иркутска гимназия № 2 </h3></div>
+            <?php
+            $hdr= new Template();
+            echo pubHeader::widget([
+                'header_data' => $hdr->getHeader(),
+            ]);
+            ?>
         </div>
         <div class="HatBoxItem">
             <div class="HatSlider">
@@ -85,23 +93,18 @@ $slider = new Slider();
 </div>
     <footer class="footer">
 
-        <p class="container">
-            <div class="footerdatabox">
-                <p class="pull-left">
-                    <?= date('d.m.Y') ?>
-                </p>
-                <p class="pull-left">&copy; <?= Html::encode('МАОУ города Иркутска гимназия № 2') ?></p>
-                <p class="pull-left">
-                    <?= Html::encode('Телефон-факс: (3952)36-90-60') ?>
-                </p>
-                <p class="pull-left">
-                    <?= Html::encode('E-mail: gimnasium2@inbox.com') ?>
-                </p>
-            </div>
-        </p>
 
-        <div class="gym_map">
-            <div id="map" style="width:710px; height:300px"></div>
+            <?php
+
+            $ftr = new Template();
+            echo pubFooter::widget([
+                'footer_data' => $ftr->getFooter()
+            ]);
+
+            ?>
+
+        <div class="footer_date">
+            <?php echo date('d.m.Y');?>
         </div>
 
 

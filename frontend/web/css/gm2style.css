@@ -434,4 +434,11 @@ a:focus {
 .menu-mainmenu ul ul a.active {
     color: #397ad0;
 }
+.footer_date{
+
+    position: relative;
+    top: 307px;
+
+}
+
 
