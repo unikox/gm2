@@ -9,7 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
-
+use yii\helpers\Url;
 AppAsset::register($this);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 ?>
@@ -50,8 +50,24 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
             )
             . Html::endForm()
             . '</li>';
-            $menuItems[] = ['label' => 'Сообщения посетителей', 'url' => ['/request']];
-            $menuItems[] = ['label' => 'Ответы администрации', 'url' => ['/answer']];
+        
+
+            $menuItems[] = ['label' => 'Обратная связь', 'items' =>  [
+
+
+                [ 'label' => 'Ответы администрации', 'url' => Url::to('index.php?r=answer')] ,
+                [ 'label' => 'Сообщения посетителей', 'url' => Url::to('index.php?r=request')] 
+            ]];
+            $menuItems[] = ['label' => 'Содержимое сайта', 'items' =>  [
+                [ 'label' => 'Настройка главной страницы', 'url' => Url::to('index.php?r=hpage%2Fupdate&id=1')] ,
+                [ 'label' => 'Настройка шаблона сайта', 'url' => Url::to('index.php?r=template%2Fupdate&id=1')] ,
+                [ 'label' => 'Менеджер разделов меню', 'url' => Url::to('index.php?r=menuitems')] ,
+                [ 'label' => 'Менеджер страниц', 'url' => Url::to('index.php?r=pages')],
+                [ 'label' => 'Менеджер слайдеров', 'url' => Url::to('index.php?r=slider')],
+                [ 'label' => 'Менеджер новостей', 'url' => Url::to('index.php?r=news')]
+            ]];
+
+            
             //$menuItems[] = ['label' => 'Разделы горизонтального меню', 'url' => ['/menu']];
             //$menuItems[] = ['label' => 'Разделы вертикального меню', 'url' => ['/menu']];
             //$menuItems[] = ['label' => 'Материалы', 'url' => ['/posts']];

@@ -10,8 +10,26 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
+
+use frontend\widgets\siteComponents\pubMenu;
+use frontend\widgets\siteComponents\pubSlider;
+use frontend\widgets\siteComponents\pubHeader;
+use frontend\widgets\siteComponents\pubFooter;
+use app\models\Menuitems;
+use app\models\Template;
+use app\models\Slider;
+
 AppAsset::register($this);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
+//Без слайдера разблокирвать:
+//$this->registerJsFile(Yii::$app->request->baseUrl.'/js/menu.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+
+$this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl.'/js/lists.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$mItems = Menuitems::find()->all();
+$mit = new Menuitems;
+$slider = new Slider();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -23,64 +41,74 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
+<div class="gm2container">
+    <div class="HatBox">
 
-        'brandLabel' => Yii::$app->name,
-        //'brandUrl' => Yii::$app->homeUrl,
-        'brandUrl' => 'http://gm2irk.ru/gm2',
-        'options' => [
-            'class' => 'gm2-navbar navbar-fixed-top',
-            'style' => 'color: #000;'
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Обратная Связь', 'url' => ['/request']],
-        //['label' => 'Home', 'url' => ['/site/index']],
-        //['label' => 'About', 'url' => ['/site/about']],
-        //['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    /*if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }*/
-    echo Nav::widget([
-        'options' => ['class' => 'gm2-navbar navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+        <div class="HatBoxItemData">
+            <?php
+            $hdr= new Template();
+            echo pubHeader::widget([
+                'header_data' => $hdr->getHeader(),
+            ]);
+            ?>
+        </div>
+        <div class="HatBoxItem">
+            <div class="HatSlider">
+                <?php
+                    echo pubSlider::widget([
+                        'slider_items' =>$slider -> getSliderItems('General'),
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+                    ]);
+                ?>
+            </div>
+        </div>
     </div>
+    <div class="ContentBox">
+        <div class="ContentItemBox">
+            <div class="ContentItemBaner"><a href="http://gm2irk.ru/index.php?r=request" ><img class="HatBaner" src="http://gm2irk.ru/images/vopros.png"></a></div>
+            <div class="ContentItemMenu">
+                <?php
+                    //var_dump($mit->getSections());
+                    echo pubMenu::widget([
+                        'sections' => $mit->getSections(),
+                        'subsections' => $mit->getSubSections(),
+                        'sectionsAlone' => $mit->getSubSectionsAlone(),
+                    ]);
+
+                  ?>
+
+            </div>
+        </div>
+            
+        <div class="ContentItem"><?= $content ?>
+            
+        </div>
+    </div>
+
 </div>
+    <footer class="footer">
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= date('Y') ?> <?= Html::encode(Yii::$app->name) ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+            <?php
+
+            $ftr = new Template();
+            echo pubFooter::widget([
+                'footer_data' => $ftr->getFooter()
+            ]);
+
+            ?>
+
+        <div class="footer_date">
+            <?php echo date('d.m.Y');?>
+        </div>
+
+
+    </footer>
 
 <?php $this->endBody() ?>
 </body>
