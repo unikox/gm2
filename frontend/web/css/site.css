@@ -146,6 +146,9 @@ a.desc:after {
 
 
 }
+.news_pager_headers_item:hover{
+    background-color:rgb(255 242 242);
+}
 .news_pager_headers_item{
     float: left;
     margin-bottom: -1px;
@@ -167,8 +170,7 @@ a.desc:after {
     -webkit-border-top-right-radius: 0;
 }
 
-
-.news_item_box{
+.news_item_container{
     width: 64%;
     border: #cbd3d9 solid 1px;
     padding-top: 20px;
@@ -177,6 +179,13 @@ a.desc:after {
     -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+.news_item_box{
+
+}
+.news_item_covid{
+    display: none;
+    padding: 5%;
 }
 .news_item{
     display: flex;

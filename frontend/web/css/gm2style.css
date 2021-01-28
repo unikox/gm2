@@ -485,6 +485,8 @@ a:focus {
 .distant_url{
 	padding: 1%;
 }
+
+
    @media screen and (max-device-width: 1450px) {
         .gm2container{
                 width:80%;
