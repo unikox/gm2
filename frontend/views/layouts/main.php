@@ -35,6 +35,8 @@ $slider = new Slider();
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <meta name="yandex-verification" content="1c1ee3cd615054d9" />
+    <meta name='wmail-verification' content='878c92b24b21e0d2566ca87132de1d91' />
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

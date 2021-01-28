@@ -17,6 +17,7 @@ $an = Answer::find()->all();
 
 //$this->registerJsFile(Yii::$app->request->baseUrl.'/js/ckeditor/ckeditor.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 //$this->registerCssFile("@web/css/message.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()], 'media' => 'print', ], 'css-print-theme');
+//
 $this->registerCssFile("@web/css/message.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 
 
@@ -90,5 +91,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <p align="center">
         <?= Html::a('Новое сообщение', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+</div>
 </div>
 </div>
