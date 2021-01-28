@@ -1,26 +1,25 @@
 <?php
+
 namespace frontend\controllers;
 
-use app\models\TemplateSearch;
+use app\models\NewsSearch;
+use app\models\Pages;
+use common\models\LoginForm;
+use frontend\models\ContactForm;
+use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResendVerificationEmailForm;
+use frontend\models\ResetPasswordForm;
+use frontend\models\SignupForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
-use app\models\News;
-use app\models\NewsSearch;
-use app\models\Template;
 
 /**
- * Site controller
+ * Site controller.
  */
 class SiteController extends Controller
 {
@@ -78,6 +77,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $news_page = new Pages();
+        $news_page_res = $news_page->getCovid();
+
+        if (!isset($news_page_res)) {
+            $news_page_res = [];
+        }
 
         $searchNewsModel = new NewsSearch();
         $dataProviderNews = $searchNewsModel->search(Yii::$app->request->queryParams);
@@ -85,7 +90,7 @@ class SiteController extends Controller
         return $this->render('index', [
             'searchNewsModel' => $searchNewsModel,
             'dataNewsProvider' => $dataProviderNews,
-
+            'covid_data' => $news_page_res,
         ]);
     }
 
@@ -167,6 +172,7 @@ class SiteController extends Controller
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+
             return $this->goHome();
         }
 
@@ -202,7 +208,9 @@ class SiteController extends Controller
      * Resets password.
      *
      * @param string $token
+     *
      * @return mixed
+     *
      * @throws BadRequestHttpException
      */
     public function actionResetPassword($token)
@@ -225,10 +233,12 @@ class SiteController extends Controller
     }
 
     /**
-     * Verify email address
+     * Verify email address.
      *
      * @param string $token
+     *
      * @throws BadRequestHttpException
+     *
      * @return yii\web\Response
      */
     public function actionVerifyEmail($token)
@@ -241,16 +251,18 @@ class SiteController extends Controller
         if ($user = $model->verifyEmail()) {
             if (Yii::$app->user->login($user)) {
                 Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
+
                 return $this->goHome();
             }
         }
 
         Yii::$app->session->setFlash('error', 'Sorry, we are unable to verify your account with provided token.');
+
         return $this->goHome();
     }
 
     /**
-     * Resend verification email
+     * Resend verification email.
      *
      * @return mixed
      */
@@ -260,13 +272,14 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+
                 return $this->goHome();
             }
             Yii::$app->session->setFlash('error', 'Sorry, we are unable to resend verification email for the provided email address.');
         }
 
         return $this->render('resendVerificationEmail', [
-            'model' => $model
+            'model' => $model,
         ]);
     }
 }
