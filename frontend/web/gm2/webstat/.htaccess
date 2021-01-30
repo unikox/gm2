@@ -1,6 +1,0 @@
-<Limit GET POST>
-	require valid-user
-</Limit>
-AuthType Basic
-AuthName "webstat"
-AuthUserFile /home/gymn2/data/etc/gymn2.irkutsk.ru.stat.passwd
