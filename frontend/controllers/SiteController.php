@@ -77,6 +77,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
+	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
         $news_page = new Pages();
         $news_page_res = $news_page->getCovid();
 

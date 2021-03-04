@@ -35,6 +35,8 @@ class NewsController extends Controller
      */
     public function actionIndex()
     {
+	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
+	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
         $searchModel = new NewsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -52,6 +54,8 @@ class NewsController extends Controller
      */
     public function actionView($id)
     {
+	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
+	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
