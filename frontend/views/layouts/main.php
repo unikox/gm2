@@ -24,9 +24,9 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
 //Без слайдера разблокирвать:
 //$this->registerJsFile(Yii::$app->request->baseUrl.'/js/menu.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 
-$this->registerJsFile(Yii::$app->request->baseUrl.'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl.'/js/2gis.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl.'/js/lists.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl . 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl . '/js/2gis.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::$app->request->baseUrl . '/js/lists.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $mItems = Menuitems::find()->all();
 $mit = new Menuitems;
 $slider = new Slider();
@@ -34,6 +34,7 @@ $slider = new Slider();
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
+
 <head>
     <meta name="yandex-verification" content="1c1ee3cd615054d9" />
     <meta name='wmail-verification' content='878c92b24b21e0d2566ca87132de1d91' />
@@ -45,36 +46,37 @@ $slider = new Slider();
     <?php $this->head() ?>
 
 </head>
+
 <body>
-<?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
 
-<div class="gm2container">
-    <div class="HatBox">
-
-        <div class="HatBoxItemData">
-            <?php
-            $hdr= new Template();
-            echo pubHeader::widget([
-                'header_data' => $hdr->getHeader(),
-            ]);
-            ?>
-        </div>
-        <div class="HatBoxItem">
-            <div class="HatSlider">
+    <div class="gm2container">
+        <div class="HatBox">
+            <div class="HatMobMenu btn btn-outline-success">меню</div>
+            <div class="HatBoxItemData">
                 <?php
-                    echo pubSlider::widget([
-                        'slider_items' =>$slider -> getSliderItems('General'),
-
-                    ]);
+                $hdr = new Template();
+                echo pubHeader::widget([
+                    'header_data' => $hdr->getHeader(),
+                ]);
                 ?>
             </div>
+            <div class="HatBoxItem">
+                <div class="HatSlider">
+                    <?php
+                    echo pubSlider::widget([
+                        'slider_items' => $slider->getSliderItems('General'),
+
+                    ]);
+                    ?>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="ContentBox">
-        <div class="ContentItemBox">
-            <div class="ContentItemBaner"><a href="http://gm2irk.ru/index.php?r=request" ><img class="HatBaner" src="http://gm2irk.ru/images/vopros.png"></a></div>
-            <div class="ContentItemMenu">
-                <?php
+        <div class="ContentBox">
+            <div class="ContentItemBox">
+                <div class="ContentItemBaner"><a href="http://gm2irk.ru/index.php?r=request"><img class="HatBaner" src="http://gm2irk.ru/images/vopros.png"></a></div>
+                <div class="ContentItemMenu">
+                    <?php
                     //var_dump($mit->getSections());
                     echo pubMenu::widget([
                         'sections' => $mit->getSections(),
@@ -82,37 +84,38 @@ $slider = new Slider();
                         'sectionsAlone' => $mit->getSubSectionsAlone(),
                     ]);
 
-                  ?>
+                    ?>
+
+                </div>
+            </div>
+
+            <div class="ContentItem"><?= $content ?>
 
             </div>
         </div>
-            
-        <div class="ContentItem"><?= $content ?>
-            
-        </div>
-    </div>
 
-</div>
+    </div>
     <footer class="footer">
 
 
-            <?php
+        <?php
 
-            $ftr = new Template();
-            echo pubFooter::widget([
-                'footer_data' => $ftr->getFooter()
-            ]);
+        $ftr = new Template();
+        echo pubFooter::widget([
+            'footer_data' => $ftr->getFooter()
+        ]);
 
-            ?>
+        ?>
 
         <div class="footer_date">
-            <?php echo date('d.m.Y');?>
+            <?php echo date('d.m.Y'); ?>
         </div>
 
 
     </footer>
 
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 </body>
+
 </html>
 <?php $this->endPage() ?>

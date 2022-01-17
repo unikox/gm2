@@ -19,7 +19,9 @@ class pubHeader extends Widget
 	}
 	public function run()
 	{
-		return $this->header_data[0]['header_body'];
+
+		$data = $this->header_data[0]['header_body'];
+		return $data;
 
 	}
 	

@@ -1,6 +1,11 @@
 .news__block{
 
 }
+.HatMobMenu{
+    background-color: #f7f3ec;
+    color:#bbb;
+    display: none;
+}
 .news-index{
 
 }
@@ -504,3 +509,88 @@ a:focus {
 	.footer{
                 width:94%;
 	}
+}
+@media screen and (max-device-width: 375px) {
+    .ContentItemMenu{
+            display: none;
+    }
+    .ContentItemBox{
+        display: none;
+    }
+    .ContentItem{
+        width: unset;
+    }
+    .HatSlider{
+        height: unset;
+        margin-bottom: 7%;
+    }
+    .HatLogImage{
+        margin-left:1%;
+    }
+    .HatDataItem{
+        line-height:unset;
+        font-size: 18px;
+        margin: 8px;
+    }
+    .gym_map{
+        width: 270px;
+    }
+    .footer_body{
+        flex-flow: column;
+        left:unset;
+    }
+    .footer__box2{
+        left:unset;
+    }
+    .news_item_container{
+        width: 98%;
+    }
+    .HatMobMenu{
+        display: block;
+        background-color: #eaeaeabd;
+        color: #8a242e85;;
+        width: unset;
+        position: fixed;
+        right: 5%;
+        
+    }
+    .menu-mainmenu{
+        width: unset;
+    }
+    .HatBaner{
+        width: 271%;
+        left: unset;
+    }
+    .menu-mainmenu li a{
+        background-color: #f4f1ea;
+    }
+    .menu-mainmenu li a.accordion-toggle.collapsed{
+        background-color: #f4f1ea;
+    }
+    .menu-mainmenu .sub_menu, .menu-mainmenu ul li, .menu-mainmenu ul li ul li{
+        background-color: #f4f1ea;
+    }
+    .menu-mainmenu li{
+        background-color: #f4f1ea;
+        float:unset;
+    }
+    .ContentItemBaner{
+        position: relative;
+        bottom: 9%;
+        z-index: 1000;
+        width: 102%;
+    }
+    .ContentItemMenu{
+        position: relative;
+        bottom: 9%;
+        z-index: 1000;
+    }
+    .menu-mainmenu ul{
+        margin-left: 9px;
+        z-index: 1000;
+    }
+    .menu-mainmenu{
+        border: 1px solid;
+        z-index: 1000;
+    }
+}
