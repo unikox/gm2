@@ -52,7 +52,7 @@ $slider = new Slider();
 
     <div class="gm2container">
         <div class="HatBox">
-            <div class="HatMobMenu btn btn-outline-success">меню</div>
+            <div class="HatMobMenu btn btn-outline-success">☰</div>
             <div class="HatBoxItemData">
                 <?php
                 $hdr = new Template();

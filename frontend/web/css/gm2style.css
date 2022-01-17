@@ -510,7 +510,7 @@ a:focus {
                 width:94%;
 	}
 }
-@media screen and (max-device-width: 375px) {
+@media (min-width: 359px) and (max-device-width: 390px) {
     .ContentItemMenu{
             display: none;
     }
@@ -575,15 +575,18 @@ a:focus {
         float:unset;
     }
     .ContentItemBaner{
-        position: relative;
-        bottom: 9%;
+        position: absolute;
         z-index: 1000;
-        width: 102%;
+        width: 30%;
+        margin: 2px;
+        margin-top: -235px;
     }
     .ContentItemMenu{
-        position: relative;
-        bottom: 9%;
+        position: absolute;
+        width: 81%;
         z-index: 1000;
+        margin: 2px;
+        margin-top: -135px;
     }
     .menu-mainmenu ul{
         margin-left: 9px;
@@ -594,3 +597,96 @@ a:focus {
         z-index: 1000;
     }
 }
+@media (min-width: 391px) and (max-device-width: 750px) {
+    .ContentItemMenu{
+            display: none;
+    }
+    .ContentItemBox{
+        display: none;
+    }
+    .ContentItem{
+        width: unset;
+    }
+    .HatSlider{
+        height: unset;
+        margin-bottom: 7%;
+    }
+    .HatLogImage{
+        margin-left:1%;
+    }
+    .HatDataItem{
+        line-height:unset;
+        font-size: 18px;
+        margin: 8px;
+    }
+    .gym_map{
+        width: 270px;
+    }
+    .footer_body{
+        flex-flow: column;
+        left:unset;
+    }
+    .footer__box2{
+        left:unset;
+    }
+    .news_item_container{
+        width: 98%;
+    }
+    .HatMobMenu{
+        display: block;
+        background-color: #eaeaeabd;
+        color: #8a242e85;;
+        width: unset;
+        position: fixed;
+        right: 5%;
+        margin-right: -6px;
+        margin-top: -18px;
+        
+    }
+    .menu-mainmenu{
+        width: unset;
+    }
+    .HatBaner{
+        width: 245%;
+        left: unset;
+    }
+    .menu-mainmenu li a{
+        background-color: #f4f1ea;
+    }
+    .menu-mainmenu li a.accordion-toggle.collapsed{
+        background-color: #f4f1ea;
+    }
+    .menu-mainmenu .sub_menu, .menu-mainmenu ul li, .menu-mainmenu ul li ul li{
+        background-color: #f4f1ea;
+    }
+    .menu-mainmenu li{
+        background-color: #f4f1ea;
+        float:unset;
+    }
+    .ContentItemBaner{
+        position: absolute;
+        z-index: 1000;
+        width: 30%;
+        margin: 2px;
+        margin-top: -235px;
+    }
+    .ContentItemMenu{
+        position: absolute;
+        width: 73%;
+        z-index: 1000;
+        margin: 2px;
+        margin-top: -135px;
+    }
+    .menu-mainmenu ul{
+        margin-left: 9px;
+        z-index: 1000;
+    }
+    .menu-mainmenu{
+        border: 1px solid;
+        z-index: 1000;
+    }
+    .HatBox{
+        padding: 8px;
+    }
+}
+
