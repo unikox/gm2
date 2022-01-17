@@ -96,6 +96,24 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionSw()
+    {
+        
+        $session = Yii::$app->session;
+        $slow_view_mode = $session->get('slow_view_mode');
+        //dd($slow_view_mode);
+        if($slow_view_mode=='Enabled'){
+            
+            $session->set('slow_view_mode', 'Disabled');
+            return $this->redirect(Yii::$app->request->referrer ?: Yii::$app->homeUrl);
+        }
+        else {
+
+            $session->set('slow_view_mode', 'Enabled');
+            return $this->redirect(Yii::$app->request->referrer ?: Yii::$app->homeUrl);
+        }
+
+    }
     /**
      * Logs in a user.
      *
@@ -103,6 +121,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }

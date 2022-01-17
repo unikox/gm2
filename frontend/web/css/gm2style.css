@@ -596,6 +596,15 @@ a:focus {
         border: 1px solid;
         z-index: 1000;
     }
+    .collapse.in{
+        padding: 5px;
+    }
+    .pages-view{
+        padding-right: 5%;
+    }
+    .news_title{
+        margin-right: 5%;
+    }
 }
 @media (min-width: 391px) and (max-device-width: 750px) {
     .ContentItemMenu{
@@ -687,6 +696,15 @@ a:focus {
     }
     .HatBox{
         padding: 8px;
+    }
+    .collapse.in{
+        padding: 5px;
+    }
+    .pages-view{
+        padding-right: 5%;
+    }
+    .news_title{
+        margin-right: 5%;
     }
 }
 

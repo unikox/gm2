@@ -30,6 +30,14 @@ $this->registerJsFile(Yii::$app->request->baseUrl . '/js/lists.js', ['depends' =
 $mItems = Menuitems::find()->all();
 $mit = new Menuitems;
 $slider = new Slider();
+
+$session = Yii::$app->session;
+$slow_view_mode = $session->get('slow_view_mode');
+if($slow_view_mode=='Enabled'){
+    echo $slow_view_mode;
+    //dd($session);
+   // var_dump($session);
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -52,8 +60,9 @@ $slider = new Slider();
 
     <div class="gm2container">
         <div class="HatBox">
+        <div class="btn btn-outline-success"><a href="index.php?r=site/sw">Версия для слабовидящих</a></div>
             <div class="HatMobMenu btn btn-outline-success">☰</div>
-            <div class="HatBoxItemData">
+                        <div class="HatBoxItemData">
                 <?php
                 $hdr = new Template();
                 echo pubHeader::widget([

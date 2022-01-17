@@ -19,13 +19,16 @@ jQuery(function($){
     // событие клика по веб-документу
 	$(document).mouseup( function(e){ 
 		var div = $( ".ContentItemMenu" ); 
-		if ( !div.is(e.target) // если клик был не по нашему блоку
-		    && div.has(e.target).length === 0 ) { // и не по его дочерним элементам
-			//div.hide(); // скрываем его
-            show_menu=false;
-            $( ".ContentItemBox" ).css( "display", "none" );
-            $( ".ContentItemMenu" ).css( "display", "none" );
-		}
+        width = $(window).width();
+        if(width<600){
+            if ( !div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0 ) { // и не по его дочерним элементам
+                //div.hide(); // скрываем его
+                show_menu=false;
+                $( ".ContentItemBox" ).css( "display", "none" );
+                $( ".ContentItemMenu" ).css( "display", "none" );
+            }
+        }
 	});
 });
 
