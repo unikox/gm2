@@ -324,7 +324,7 @@ body {
 
 a {
     color: #397ad0;
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 a:hover {
@@ -529,6 +529,26 @@ a:focus {
     list-style: none;
     padding: 0;
     margin: 0;
+
+}
+.size-normal:hover{
+    background-color: rgba(4,120,87,var(--tw-bg-opacity));
+}
+.size-normal,.size-medium,.size-large,.color-normal,.color-invert,.color-chromatic,.image-switcher,.spacing-normal,.spacing-medium,.spacing-large,.font-arial,.font-times:hover{
+    background-color: rgba(4,120,87,var(--tw-bg-opacity));
+}
+.size-normal,.size-medium,.size-large,.color-normal,.color-invert,.color-chromatic,.image-switcher,.spacing-normal,.spacing-medium,.spacing-large,.font-arial,.font-times,.image-switcher-on,.image-switcher-off{
+    cursor: pointer; 
+    padding: 2px;
+}
+
+.image-switcher-box{
+    display: flex;
+    flex-flow: column;
+}
+.image-switcher-options{
+    display: flex;
+    flex-flow: row;
 }
 .color-select{
     display: flex;
@@ -538,6 +558,7 @@ a:focus {
     padding: 0;
     margin: 0;
     margin-right: -10px;
+    cursor: pointer; 
 }
 .spacing-select{
     display: flex;

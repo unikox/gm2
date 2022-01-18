@@ -85,9 +85,12 @@ $slow_view_mode = $session->get('slow_view_mode');
                                 <li class="color-chromatic" data-classname="assist-chromatic" title="Хроматический синий цвет">А</li>
                             </ul>
                         </div>
-                        <div class="narrow image-section flex-shrink-0 px-3 py-2">
+                        <div class="image-switcher-box narrow image-section flex-shrink-0 px-3 py-2">
                             <span>Изображения</span>
-                            <span class="image-switcher">Вкл</span>
+                            <div class='image-switcher-options'>
+                                <span class="image-switcher-on">Вкл</span>
+                                <span class="image-switcher-off">Выкл</span>
+                            </div>
                         </div>
                         <div class="spacing-section flex-shrink-0 px-3 py-2">
                             <span>Интервал между буквами</span>
