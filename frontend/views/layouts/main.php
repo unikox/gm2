@@ -82,7 +82,7 @@ $slow_view_mode = $session->get('slow_view_mode');
                             <ul class="color-select">
                                 <li class="color-normal active" data-classname="assist-achromatic" title="Ахроматические цвета">А</li>
                                 <li class="color-invert" data-classname="assist-invert" title="Ахроматические цвета с инверсией">А</li>
-                                <li class="color-chromatic" data-classname="assist-chromatic" title="Хроматический синий цвет">А</li>
+
                             </ul>
                         </div>
                         <div class="image-switcher-box narrow image-section flex-shrink-0 px-3 py-2">
