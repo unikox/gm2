@@ -105,11 +105,13 @@ class SiteController extends Controller
         if($slow_view_mode=='Enabled'){
             
             $session->set('slow_view_mode', 'Disabled');
+            setcookie("Slow_view_mode", 'Disabled', time()+3600);
             return $this->redirect(Yii::$app->request->referrer ?: Yii::$app->homeUrl);
         }
         else {
 
             $session->set('slow_view_mode', 'Enabled');
+            setcookie("Slow_view_mode", 'Enabled', time()+3600);
             return $this->redirect(Yii::$app->request->referrer ?: Yii::$app->homeUrl);
         }
 

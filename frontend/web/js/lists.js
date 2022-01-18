@@ -1,6 +1,18 @@
 /**
  * Created by kox on 15.11.2020.
  */
+ function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
+ $( document ).ready(function() {
+    //если включен режим для слабовидящих, включаем чернобелые фильтры
+    if (getCookie("Slow_view_mode")=='Enabled'){
+        $( ".gm2container" ).css( "filter", "grayscale(100%)" );
+        $( ".footer" ).css( "filter", "grayscale(100%)" );
+        footer
+    }
+});
  show_menu=false;
  $( ".HatMobMenu" ).click(function() {
     if(show_menu){
@@ -44,4 +56,4 @@ $(function() {
             this.className = (this.className == 'drop' ? 'drop dropM' : 'drop');
         }
     }
-})();
+});

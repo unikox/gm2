@@ -33,11 +33,14 @@ $slider = new Slider();
 
 $session = Yii::$app->session;
 $slow_view_mode = $session->get('slow_view_mode');
-if($slow_view_mode=='Enabled'){
+
+/*if($slow_view_mode=='Enabled'){
     echo $slow_view_mode;
+    echo '<h5>'.$_COOKIE['Slow_view_mode'].'</h5>';
     //dd($session);
    // var_dump($session);
 }
+*/
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -60,7 +63,63 @@ if($slow_view_mode=='Enabled'){
 
     <div class="gm2container">
         <div class="HatBox">
-        <div class="btn btn-outline-success"><a href="index.php?r=site/sw">Версия для слабовидящих</a></div>
+            <?php
+            
+            if($slow_view_mode=='Enabled'){
+                ?>
+            
+                    <div class="asistent-container">
+                        <div class="size-section flex-shrink-0 px-3 py-2">
+                            <span>Размер шрифта</span>
+                            <ul class="size-select">
+                                <li class="size-normal active" data-classname="assist-normal" title="Нормальный">A</li>
+                                <li class="size-medium" data-classname="assist-medium" title="Увеличенный">A</li>
+                                <li class="size-large" data-classname="assist-large" title="Большой">A</li>
+                            </ul>
+                        </div>
+                        <div class="color-section flex-shrink-0 px-3 py-2">
+                            <span>Цвет сайта</span>
+                            <ul class="color-select">
+                                <li class="color-normal active" data-classname="assist-achromatic" title="Ахроматические цвета">А</li>
+                                <li class="color-invert" data-classname="assist-invert" title="Ахроматические цвета с инверсией">А</li>
+                                <li class="color-chromatic" data-classname="assist-chromatic" title="Хроматический синий цвет">А</li>
+                            </ul>
+                        </div>
+                        <div class="narrow image-section flex-shrink-0 px-3 py-2">
+                            <span>Изображения</span>
+                            <span class="image-switcher">Вкл</span>
+                        </div>
+                        <div class="spacing-section flex-shrink-0 px-3 py-2">
+                            <span>Интервал между буквами</span>
+                            <ul class="spacing-select">
+                                <li class="spacing-normal" data-classname="assist-spacing-normal">Нормальный</li>
+                                <li class="spacing-medium active" data-classname="assist-spacing-medium">Увеличенный</li>
+                                <li class="spacing-large" data-classname="assist-spacing-large">Большой</li>
+                            </ul>
+                        </div>
+                        <div class="font-section flex-shrink-0 px-3 py-2">
+                            <span>Шрифт</span>
+                            <ul class="font-select">
+                                <li class="font-arial" data-classname="assist-font-arial">Без засечек</li>
+                                <li class="font-times active" data-classname="assist-font-times">С засечками</li>
+                            </ul>
+                        </div>
+                    </div>
+
+            <?php
+            }
+
+            if($slow_view_mode=='Enabled'){
+                ?>
+            <div class="HatSlowView btn btn-outline-success"><a href="index.php?r=site/sw">Обычная Версия </a></div>
+            <?php
+            }
+            else{
+          ?>
+                <div class="HatSlowView btn btn-outline-success"><a href="index.php?r=site/sw">Версия для слабовидящих</a></div>
+        <?php
+            }
+        ?>
             <div class="HatMobMenu btn btn-outline-success">☰</div>
                         <div class="HatBoxItemData">
                 <?php
