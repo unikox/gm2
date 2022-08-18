@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <div class="site-contact">
     
-    <h2 style="text-align: center;"><a href="http://gm2irk.ru/images/Rublevsky_D_V.jpg"><img style="border: 0px solid ; width: 116px; height: 170px;" alt="Рублевский Дмитрий Васильевич" src="http://gm2irk.ru/images//Rublevsky_D_V.jpg"></a></h2>
+    <h2 style="text-align: center;"><a href="https://gm2-irk.ru/images/Rublevsky_D_V.jpg"><img style="border: 0px solid ; width: 116px; height: 170px;" alt="Рублевский Дмитрий Васильевич" src="https://gm2-irk.ru/images//Rublevsky_D_V.jpg"></a></h2>
     <div style="text-align: center;">
         <h3>Рублевский Дмитрий Васильевич </h3>
         <p>График работы: Понедельник - пятница с 9-00 - 18-00</p>

@@ -7,7 +7,7 @@ use yii\widgets\ListView;
 $this->registerJsFile(Yii::$app->request->baseUrl.'/js/news.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 /* @var $this yii\web\View */
 $hpage = new Hpage();
-$this->title = 'Гимназия №2';
+$this->title = 'Гимназия 2 Иркутск';
 ?>
 <div class="site-index">
     <?php

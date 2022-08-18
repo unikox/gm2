@@ -32,7 +32,7 @@ $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\Bo
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         //'brandUrl' => Yii::$app->homeUrl,
-        'brandUrl' => 'http://gm2irk.ru/index.php?r=request',
+        'brandUrl' => 'http://gm2-irk.ru/index.php?r=request',
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],

@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'slider_id',
             'item_name',
             'url:image',
-
+	    'url',
             //'title',
             //'position',
             'posted',

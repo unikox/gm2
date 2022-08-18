@@ -145,7 +145,7 @@ $slow_view_mode = $session->get('slow_view_mode');
         </div>
         <div class="ContentBox">
             <div class="ContentItemBox">
-                <div class="ContentItemBaner"><a href="http://gm2irk.ru/index.php?r=request"><img class="HatBaner" src="http://gm2irk.ru/images/vopros.png"></a></div>
+                <div class="ContentItemBaner"><a href="https://gm2-irk.ru/index.php?r=request"><img class="HatBaner" src="https://gm2-irk.ru/images/vopros.png"></a></div>
                 <div class="ContentItemMenu">
                     <?php
                     //var_dump($mit->getSections());
