@@ -49,6 +49,8 @@ return [
                 '/news/<id>' =>'/news/view',
                 'sitemap.xml'=>'sitemap/index',
                 '/page/<id>' => 'pages/view',
+                '/fedback' => 'request/index',
+                '/fedback/create' => 'request/create',
             ],
         ],
         
