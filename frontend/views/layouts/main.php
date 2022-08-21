@@ -114,12 +114,12 @@ $slow_view_mode = $session->get('slow_view_mode');
 
             if($slow_view_mode=='Enabled'){
                 ?>
-            <div class="HatSlowView btn btn-outline-success"><a href="index.php?r=site/sw">Обычная Версия </a></div>
+            <div class="HatSlowView btn btn-outline-success"><a href="/sw">Обычная Версия </a></div>
             <?php
             }
             else{
           ?>
-                <div class="HatSlowView btn btn-outline-success"><a href="index.php?r=site/sw">Версия для слабовидящих</a></div>
+                <div class="HatSlowView btn btn-outline-success"><a href="/sw">Версия для слабовидящих</a></div>
         <?php
             }
         ?>

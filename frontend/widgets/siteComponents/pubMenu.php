@@ -72,36 +72,27 @@ class pubMenu extends Widget
 
                     echo '<li>';
                     if ($this->menuItemHeader != $this->menuItemId) {
-
                         if ($value == "Главная") {
-                            echo '<a class="accordion-toggle collapsed" href="index.php?r=site/index">' . $value . "</a>";
+                            echo '<a  href="/" class="menuitem">' . $value . "</a>";
 
                         } elseif ($value == "Новости") {
-                            echo '<a class="accordion-toggle collapsed" href="index.php?r=news">' . $value . "</a>";
+                            echo '<a href="/news" class="menuitem">' . $value . "</a>";
                         } else {
-                            echo '<a href="#group_menu' . $this->menuItemId . '" class="accordion-toggle collapsed"  data-toggle="collapse">' . $value . '</a>';
+                            echo '<a href="#group_menu' . $this->menuItemId . '" class="accordion-toggle collapsed menu-collapsed"  data-toggle="collapse">' . $value . '</a>';
                         }
                         echo '<div id="group_menu' . $this->menuItemId . '" class="panel-collapse collapse"><ul>';
                         $this->menuItemHeader = $this->menuItemId;
-
                     }
-
                     foreach ($this->subsections as $subsectionskey => $subsectionsvalue) {
-
                         foreach ($subsectionsvalue as $subsectkey => $subsectvalue) {
-
                             if ($subsectkey == "id" and !$this->menuEq) {
                                 $this->menuItemUrlId = (int)$subsectvalue;
                             }
                             if ($subsectkey == "name" and $this->menuEq) {
-                                //echo "<h4>mSubItemStart</h4>";
                                 echo '<li>';
-                                echo '<a  href="index.php?r=pages%2Fview&id=' . $this->menuItemUrlId . '">' . $subsectvalue . '</a>';
+                                echo '<a  href="/page/' . $this->menuItemUrlId . '">' . $subsectvalue . '</a>';
                                 echo '</li>';
-                                //echo $subsectvalue;
-                                //echo "<h4>mSubItemStop</h4>";
                                 $this->menuEq = false;
-
                             }
                             if ($subsectkey == 'menuitem_id') {
                                 if ((int)$subsectvalue == $this->menuItemId) {
@@ -109,21 +100,17 @@ class pubMenu extends Widget
                                 }
                             }
                         }
-
                     }
                     echo "</ul>";
                     echo "</div>";
                     echo "</li>";
-                    //echo "<h4>mItemStop</h4>";
                 }
-
             };
-            //echo "</ul>" ;
         }
         foreach ($this->sectionsAlone as $SectionItem){
             //var_dump($SectionItem);
             echo '<li>';
-            echo '<a  href="index.php?r=pages%2Fview&id=' . $SectionItem['id'] . '">' . $SectionItem['name'] . '</a>';
+            echo '<a  href="/page/' . $SectionItem['id'] . '" class="menuitem" >' . $SectionItem['name'] . '</a>';
             echo '</li>';
         }
         echo "</ul>";

@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use Yii;
 /**
  * This is the model class for table "pages".
  *
@@ -19,6 +19,7 @@ class Pages extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    private static $page_list;
     public static function tableName()
     {
         return 'pages';
@@ -66,5 +67,13 @@ class Pages extends \yii\db\ActiveRecord
     public function getMenuitem()
     {
         return $this->hasOne(Menuitems::className(), ['id' => 'menuitem_id']);
+    }
+
+    public static function getListPagesId()
+    {
+        //Возвращает список id страниц
+        $sql = 'SELECT `id`,`updated_at` FROM `pages`';
+        $pages_list = Yii::$app->db->createCommand($sql)->queryAll();
+        return $pages_list;
     }
 }

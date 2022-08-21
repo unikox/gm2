@@ -385,6 +385,12 @@ a:focus {
     -moz-border-radius: 0 4px 4px 0;
     -khtml-border-radius: 0 4px 4px 0;
 }
+.menuitem{
+    border-radius: 0 4px 4px 0!important;
+    -webkit-border-radius: 0 4px 4px 0!important;
+    -moz-border-radius: 0 4px 4px 0!important;
+    -khtml-border-radius: 0 4px 4px 0!important;
+}
 .menu-mainmenu li a.accordion-toggle.collapsed {
     background-color: #fff;
     color: #484c51;
@@ -406,6 +412,10 @@ a:focus {
 .menu-mainmenu li a:hover {
     background-color: #5593e5;
     color: #fff;
+}
+.menu-collapsed:hover{
+    background-color: #5593e5!important;
+    color: #fff!important;
 }
 .menu-mainmenu li a span {
     font-size: 9px;

@@ -36,14 +36,23 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => true,
             'rules' => [
+                '/' => 'site/index',
+                '/sw' => 'site/sw',
+                '/news' =>'/news/index',
+                '/news/<id>' =>'/news/view',
+                'sitemap.xml'=>'sitemap/index',
+                '/page/<id>' => 'pages/view',
             ],
         ],
-        */
+        
+        
     ],
     'params' => $params,
 ];
