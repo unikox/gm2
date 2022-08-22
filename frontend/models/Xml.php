@@ -17,7 +17,15 @@ class Xml extends Model{
 
     public function getXmlStruct()
     {
-        //Подготовка тела XML структуры         
+        //Подготовка тела XML структуры  
+        $this->url_data = '
+        <url>
+            <loc>https://gm2-irk.ru/</loc>
+            <lastmod>'.date(DATE_W3C, time()).'</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.9</priority>
+        </url>
+    ';       
         foreach ($this->urls as $url) {
             $this->url_data = $this->url_data .'
             <url>

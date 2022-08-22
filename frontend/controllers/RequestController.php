@@ -75,6 +75,13 @@ class RequestController extends Controller
      */
     public function actionCreate()
     {
+        Yii::$app->mailer->compose()
+        ->setFrom('gm2irkbot@mail.ru')
+        ->setTo('gm2irkbot@mail.ru')
+        ->setSubject('Тема сообщения')
+        ->setTextBody('Текст сообщения')
+        ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
+        ->send();
         $model = new Request();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
