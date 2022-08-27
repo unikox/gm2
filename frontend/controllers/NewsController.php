@@ -8,6 +8,7 @@ use app\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * NewsController implements the CRUD actions for News model.
@@ -37,6 +38,7 @@ class NewsController extends Controller
     {
 	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
 	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
+    \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         $searchModel = new NewsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -56,6 +58,7 @@ class NewsController extends Controller
     {
 	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
 	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
+    \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

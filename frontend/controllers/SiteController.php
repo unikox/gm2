@@ -17,6 +17,7 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
+use yii\helpers\Url;
 
 /**
  * Site controller.
@@ -79,6 +80,7 @@ class SiteController extends Controller
     {
 	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
 	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
+    \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         $news_page = new Pages();
         $news_page_res = $news_page->getCovid();
 

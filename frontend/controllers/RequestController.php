@@ -8,7 +8,7 @@ use app\models\RequestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\helpers\Url;
 /**
  * RequestController implements the CRUD actions for Request model.
  */
@@ -46,6 +46,7 @@ class RequestController extends Controller
      */
     public function actionIndex()
     {
+        \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         $searchModel = new RequestSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -63,6 +64,7 @@ class RequestController extends Controller
      */
     public function actionView($id)
     {
+        \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -75,6 +77,8 @@ class RequestController extends Controller
      */
     public function actionCreate()
     {
+        /*
+        \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         Yii::$app->mailer->compose()
         ->setFrom('gm2irkbot@mail.ru')
         ->setTo('gm2irkbot@mail.ru')
@@ -82,10 +86,11 @@ class RequestController extends Controller
         ->setTextBody('Текст сообщения')
         ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
         ->send();
+        */
         $model = new Request();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['create', 'id' => $model->id]);
         }
 
         return $this->render('create', [

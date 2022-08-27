@@ -49,7 +49,7 @@ return [
                 '/news/<id>' =>'/news/view',
                 'sitemap.xml'=>'sitemap/index',
                 '/page/<id>' => 'pages/view',
-                '/fedback' => 'request/index',
+                '/fedback' => 'request/create',
                 '/fedback/create' => 'request/create',
             ],
         ],

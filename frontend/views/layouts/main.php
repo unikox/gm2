@@ -148,23 +148,16 @@ $slow_view_mode = $session->get('slow_view_mode');
                 <div class="ContentItemBaner"><a href="https://gm2-irk.ru/fedback"><img class="HatBaner" src="https://gm2-irk.ru/images/vopros.png"></a></div>
                 <div class="ContentItemMenu">
                     <?php
-                    //var_dump($mit->getSections());
                     echo pubMenu::widget([
                         'sections' => $mit->getSections(),
                         'subsections' => $mit->getSubSections(),
                         'sectionsAlone' => $mit->getSubSectionsAlone(),
                     ]);
-
                     ?>
-
                 </div>
             </div>
-
-            <div class="ContentItem"><?= $content ?>
-
-            </div>
-        </div>
-
+                    <div class="ContentItem"><?= $content ?></div>
+             </div>
     </div>
     <footer class="footer">
 

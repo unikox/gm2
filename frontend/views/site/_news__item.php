@@ -17,7 +17,7 @@ $d = DateTime::createFromFormat('U', $model->create_at);
 
     <div class="news_item">
         <div class="news_create"><?= Html::encode($d->format('d.m.Y')) ?></div>
-        <?= Html::tag('a', Html::encode($model->title), ['href' => '/index.php?r=news%2Fview&id='.$model->id, 'class' =>'news_title','title' => $model->shortbody ]) ?>
+        <?= Html::tag('a', Html::encode($model->title), ['href' => '/news/'.$model->id, 'class' =>'news_title','title' => $model->shortbody ]) ?>
     </div>
 
 

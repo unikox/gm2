@@ -8,7 +8,7 @@ use app\models\PagesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\helpers\Url;
 /**
  * PagesController implements the CRUD actions for Pages model.
  */
@@ -37,6 +37,7 @@ class PagesController extends Controller
     {
 	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
 	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
+    \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         $searchModel = new PagesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -56,6 +57,7 @@ class PagesController extends Controller
     {
 	\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'МОУ гимназия № 2']);
 	\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'education, learning, teaching']);
+    \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

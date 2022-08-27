@@ -3,8 +3,10 @@
 use app\models\Hpage;
 use frontend\widgets\siteComponents\pubHomepage;
 use yii\widgets\ListView;
+use yii\helpers\Url;
 
 $this->registerJsFile(Yii::$app->request->baseUrl.'/js/news.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 /* @var $this yii\web\View */
 $hpage = new Hpage();
 $this->title = 'Гимназия 2 Иркутск';

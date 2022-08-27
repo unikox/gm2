@@ -9,12 +9,13 @@ use yii\captcha\Captcha;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
         <div class="request-form">
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'name')->textInput(['maxlength' => "70%"]) ?>
 
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
@@ -22,17 +23,16 @@ use yii\captcha\Captcha;
 
             <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-
-
-                        <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                            'template' => '<div class="row"><div class="col-lg-6">{image}</div><div class="col-lg-6">{input}</div></div>',
-                        ]) ?>
-
             <div class="form-group">
-                <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col-1"><?= Html::submitButton('Отправить', ['class' => 'btn btn-success']) ?></div>
+                    <div class="col-1"></div>
+                </div>
             </div>
 
             <?php ActiveForm::end(); ?>
         </div>
+        <div class="col-md-1"></div>
     </div>
 </div>
