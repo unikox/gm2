@@ -47,13 +47,13 @@ $slow_view_mode = $session->get('slow_view_mode');
 <html lang="<?= Yii::$app->language ?>">
 
 <head>
+    <title><?= Html::encode($this->title) ?></title>
     <meta name="yandex-verification" content="1c1ee3cd615054d9" />
     <meta name='wmail-verification' content='878c92b24b21e0d2566ca87132de1d91' />
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
 </head>
@@ -155,6 +155,10 @@ $slow_view_mode = $session->get('slow_view_mode');
                     ]);
                     ?>
                 </div>
+                <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+                <div id="vk_groups"></div>
+                <script type="text/javascript"> VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, width: 248, height: 400, color1: "FFFFFF", color2: "000000", color3: "5181B8"}, 157586370);</script>
+
             </div>
                     <div class="ContentItem"><?= $content ?></div>
              </div>

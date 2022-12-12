@@ -137,7 +137,9 @@ a.desc:after {
 .news_pager_box{
     display: flex;
     flex-flow: column;
-
+    width: 90%;
+    position: relative;
+    left:10%;
 
 }
 .news_pager_headers_list{
@@ -215,4 +217,7 @@ a.desc:after {
 .news-view{
     width: 98%;
 }
-
+#vk_groups{
+    position: relative;
+    bottom: -7.5%;
+}

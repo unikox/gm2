@@ -9,7 +9,7 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/js/news.js', ['depends' => [
 $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 /* @var $this yii\web\View */
 $hpage = new Hpage();
-$this->title = 'Гимназия 2 Иркутск';
+$this->title = 'Гимназия №2, Университетский микрорайон, 85, Иркутск';
 ?>
 <div class="site-index">
     <?php
