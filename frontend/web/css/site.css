@@ -182,9 +182,7 @@ a.desc:after {
     -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
 }
-.news_item_box{
 
-}
 .news_item_covid{
     display: none;
     padding: 5%;
@@ -219,5 +217,6 @@ a.desc:after {
 }
 #vk_groups{
     position: relative;
-    bottom: -7.5%;
+    bottom: -8.5%;
+    padding: 20px;
 }

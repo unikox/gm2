@@ -15,5 +15,5 @@ DG.then(function () {
    // var polygonComponents = 'POLYGON((104.248422 52.251016, 104.248422 52.251016, 104.248422 52.251016, 104.248422 52.251016,104.248422 52.251016)';
     //52.250875, 104.248272
     //52.251016, 104.248422
-    DG.Wkt.geoJsonLayer(polygonComponents).addTo(map);
+    //DG.Wkt.geoJsonLayer(polygonComponents).addTo(map);
 });

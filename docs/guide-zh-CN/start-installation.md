@@ -3,7 +3,7 @@
 
 ## 要求
 
-此项目模板的最低要求是您的Web服务器支持PHP 5.4.0。
+此项目模板的最低要求是您的Web服务器支持PHP 5.6.0。
 
 ## 使用Composer安装
 
@@ -14,7 +14,7 @@
 
     composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
 
-个命令将高级应用程序安装在名为 `yii-application` 的目录中。 如果需要，您可以选择不同的目录名称。 
+这个命令将高级应用程序安装在名为 `yii-application` 的目录中。 如果需要，您可以选择不同的目录名称。 
 
 ## 从归档文件安装
 
@@ -36,7 +36,7 @@
    如果使用脚本自动化，可以在非交互模式下执行 `init` 。
 
    ```
-   /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All
+   /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All --delete=All
    ```
 
 2. 创建一个新的数据库，并相应地调整 `common/config/main-local.php` 中的 `components['db']` 配置。

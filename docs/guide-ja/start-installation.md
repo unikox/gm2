@@ -3,11 +3,12 @@
 
 ## 必要条件
 
-このプロジェクト・テンプレートが要求する最低限の必要条件は、あなたのウェブ・サーバが PHP 5.4.0 をサポートしていることです。
+このプロジェクト・テンプレートが要求する最低限の必要条件は、あなたのウェブ・サーバが PHP 5.6.0 をサポートしていることです。
 
 ## Composer を使ってインストールする
 
-[Composer](http://getcomposer.org/) を持っていない場合は、決定版ガイドの [Yii をインストールする](https://github.com/yiisoft/yii2/blob/master/docs/guide-ja/start-installation.md#installing-via-composer)
+[Composer](http://getcomposer.org/) を持っていない場合は、
+決定版ガイドの [Yii をインストールする](https://github.com/yiisoft/yii2/blob/master/docs/guide-ja/start-installation.md#installing-via-composer)
 のセクションの指示に従ってインストールしてください。
 
 Composer がインストールされていれば、次のコマンドを使ってアプリケーションをインストールすることが出来ます。
@@ -17,7 +18,9 @@ Composer がインストールされていれば、次のコマンドを使っ�
 このコマンドは `yii-application` という名前のディレクトリにアドバンスト・アプリケーションをインストールします。
 望むなら別のディレクトリ名を選ぶことも出来ます。
 
-Bower と NPM の依存パッケージを Composer によって管理するために [asset-packagist](https://asset-packagist.org/) を使っています。以前のバージョンのように [asset-plugin](https://packagist.org/packages/fxp/composer-asset-plugin) を使うことも出来ますが、動作は低速です。
+Bower と NPM の依存パッケージを Composer によって管理するために [asset-packagist](https://asset-packagist.org/) を使っています。
+以前のバージョンのように [asset-plugin](https://packagist.org/packages/fxp/composer-asset-plugin) を使うことも出来ますが、
+動作は低速です。
 
 ## アーカイブ・ファイルからインストールする
 
@@ -41,7 +44,7 @@ Bower と NPM の依存パッケージを Composer によって管理するた�
    スクリプトで自動化する場合は、非対話モードで `init` を実行します。
 
    ```
-   /path/to/php-bin/php /path/to/yii-application/init --env=Development --overwrite=All
+   /path/to/php-bin/php /path/to/yii-application/init --env=Development --overwrite=All --delete=All
    ```
 
 2. 新しいデータベースを作成し、それに従って `/path/to/yii-application/common/config/main-local.php` の `components['db']` の構成情報を修正します。
@@ -289,9 +292,9 @@ Bower と NPM の依存パッケージを Composer によって管理するた�
 
 コンテナの中で `init` コマンドを実行することによってアプリケーションを初期化します。
 
-    docker-compose run --rm backend /app/init
+    docker-compose run --rm backend php /app/init
 
-好みのデータベース・サービスを追加して、それに合せて `common/config/main-local.php` の 'db' コンポーネントの構成を修正します。
+それに合せて `common/config/main-local.php` の 'db' コンポーネントの構成を修正します。
     
         'dsn' => 'mysql:host=mysql;dbname=yii2advanced',
         'username' => 'yii2advanced',
@@ -305,14 +308,14 @@ Bower と NPM の依存パッケージを Composer によって管理するた�
 
 Docker のセットアップに関する更なる詳細は [ガイド](http://www.yiiframework.com/doc-2.0/guide-index.html) を参照して下さい。
 
-マイグレーションを実行します。
-
-    docker-compose run --rm backend yii migrate
-           
 アプリケーションを開始します。
 
     docker-compose up -d
-    
+
+マイグレーションを実行します。
+
+    docker-compose run --rm backend yii migrate
+
 ブラウザで下記を開いてアプリケーションにアクセスします。
 
 - フロントエンド: http://127.0.0.1:20080

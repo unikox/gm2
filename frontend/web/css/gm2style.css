@@ -151,8 +151,12 @@
 }
 .ContentItem{
     margin: 0 auto;
-    width: 78%;
+    width: 67%;
     padding: 0px 0px 10px 10px;
+}
+.ContentItemVk{
+    position: relative;
+    max-width: 100%;
 }
 .pages-view{
     padding-left: 5%;

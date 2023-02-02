@@ -29,9 +29,20 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'name',
             'menuitem.name',
-            //'page_body:html',
-            'created_at:date',
-            'updated_at:date',
+            // 'created_at:date',
+            [
+                'attribute'=>'created_at',
+                'label'=>'Создано',
+                'format' => ['date', 'php:d-m-Y H:i:s']
+                //'headerOptions' => ['width' => '200'],
+            ],
+            // 'updated_at:date',
+            [
+                'attribute'=>'updated_at',
+                'label'=>'Отредактировано',
+                'format' => ['date', 'php:d-m-Y H:i:s']
+                //'headerOptions' => ['width' => '200'],
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

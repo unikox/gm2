@@ -5,11 +5,11 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'language' => 'ru-RU',
+    // 'currencyCode' => 'RUR',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-	'currencyCode' => 'RUR',
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => \yii\caching\FileCache::class,
         ],
     ],
 ];

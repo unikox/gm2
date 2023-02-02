@@ -3,7 +3,7 @@ Instalação
 
 ## Pré-Requisitos
 
-O requisito mínimo deste template de projetos é que seu servidor Web suporte PHP 5.4.0.
+O requisito mínimo deste template de projetos é que seu servidor Web suporte PHP 5.6.0.
 
 ## Instalação utilizando Composer
 
@@ -39,7 +39,7 @@ para inicializar a aplicação, sendo necessário realizá-los apenas uma vez no
    Caso queria realizar a automação do processo por meio de um script, você pode executar o comando `init` em modo não interativo.
    
    ```
-   /caminho/para/binario-php/php /caminho/para/aplicacao-yii/init --env=Production --overwrite=All
+   /caminho/para/binario-php/php /caminho/para/aplicacao-yii/init --env=Production --overwrite=All --delete=All
    ```
    
 2. Crie um novo banco de dados e ajuste a configuração `components['db']` em `common/config/main-local.php` adequadamente.

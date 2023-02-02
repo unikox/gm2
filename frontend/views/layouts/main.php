@@ -2,14 +2,11 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use yii\bootstrap5\Nav;
+use yii\bootstrap5\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
 use common\widgets\Alert;
-
 
 use frontend\widgets\siteComponents\pubMenu;
 use frontend\widgets\siteComponents\pubSlider;
@@ -19,14 +16,10 @@ use app\models\Menuitems;
 use app\models\Template;
 use app\models\Slider;
 
-AppAsset::register($this);
-$this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
-//Без слайдера разблокирвать:
-//$this->registerJsFile(Yii::$app->request->baseUrl.'/js/menu.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-
-$this->registerJsFile(Yii::$app->request->baseUrl . 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full', ['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl . '/js/2gis.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl . '/js/lists.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::class]]);
+$this->registerJsFile(Yii::$app->request->baseUrl . 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full', ['depends' => [\yii\web\JqueryAsset::class]]);
+$this->registerJsFile(Yii::$app->request->baseUrl . '/js/2gis.js', ['depends' => [\yii\web\JqueryAsset::class]]);
+$this->registerJsFile(Yii::$app->request->baseUrl . '/js/lists.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 $mItems = Menuitems::find()->all();
 $mit = new Menuitems;
 $slider = new Slider();
@@ -34,13 +27,6 @@ $slider = new Slider();
 $session = Yii::$app->session;
 $slow_view_mode = $session->get('slow_view_mode');
 
-/*if($slow_view_mode=='Enabled'){
-    echo $slow_view_mode;
-    echo '<h5>'.$_COOKIE['Slow_view_mode'].'</h5>';
-    //dd($session);
-   // var_dump($session);
-}
-*/
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -155,10 +141,11 @@ $slow_view_mode = $session->get('slow_view_mode');
                     ]);
                     ?>
                 </div>
+                <div class="ContentItemVk">
                 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
                 <div id="vk_groups"></div>
                 <script type="text/javascript"> VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, width: 248, height: 400, color1: "FFFFFF", color2: "000000", color3: "5181B8"}, 157586370);</script>
-
+                </div>
             </div>
                     <div class="ContentItem"><?= $content ?></div>
              </div>

@@ -3,7 +3,7 @@ Installation
 
 ## Exigences
 
-L'exigence minimum de ce modèle de projet est que votre serveur Web prenne en charge PHP 5.4.0.
+L'exigence minimum de ce modèle de projet est que votre serveur Web prenne en charge PHP 5.6.0.
 
 ## Installation via Composer
 
@@ -37,7 +37,7 @@ Après que vous avez installé l'application, vous devez accomplir les étapes s
    Si vous l'automatisez à l'aide d'un script, vous pouvez exécuter `init` en mode non interactif.
 
    ```
-   /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All
+   /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All --delete=All
    ```
 
 2. Créez une nouvelle base de données et complétez la configuration de `components['db']` dans `common/config/main-local.php` en conséquence.
