@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>График работы: Понедельник - пятница с 9-00 - 18-00</p>
         <p>Телефон/факс: (3952) 36-90-60</p>
 
-        <p>Вопросы отправлять по адресу gimnasium2@inbox.com</p>
+        <p>Вопросы отправлять по адресу gimnasium2@gmail.com</p>
 
         <h3>Уважаемые гости!</h3>
         <p>При написании обращения просим вас ОБЯЗАТЕЛЬНО указывать фамилию, имя и отчество.</p><p> Если ваш вопрос касается ребенка, обучающегося в гимназии, вам необходимо написать его фамилию,имя и класс.</p>
@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo CommentList::widget(  [
                                             'name'=>'Администрация',
                                             'body' => $anselect->body, 
-                                            'mail'=> 'gimnasium2@inbox.com', 
+                                            'mail'=> 'gimnasium2@gmail.com', 
                                             'date' => $an_date,
                                             'type' => 'message_an'
                                                             ]);

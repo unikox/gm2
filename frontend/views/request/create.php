@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     	<h3>Рублевский Дмитрий Васильевич </h3>
 		<p>График работы: Понедельник - пятница с 9-00 - 18-00</p>
 		<p>Телефон/факс: (3952) 36-90-60</p>
-		<p>Вопросы отправлять по адресу gimnasium2@inbox.com</p>
+		<p>Вопросы отправлять по адресу gimnasium2@gmail.com</p>
 		<div class="row">
 			<div class="col-2"></div>
 			<div class="col-8">
