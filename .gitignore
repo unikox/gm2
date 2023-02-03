@@ -1,4 +1,7 @@
 # yii console commands
+*.mp4
+*.avi
+*.MP4
 /yii
 /yii_test
 /yii_test.bat
@@ -42,5 +45,3 @@ phpunit.phar
 /backend/web/index-test.php
 /backend/web/robots.txt
 frontend/web/images/Documents/Proekt/Primery_produktov/Primer2.mp4
-.*.mp4
-.*.avi
