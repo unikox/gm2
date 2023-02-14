@@ -17,6 +17,7 @@ use app\models\Template;
 use app\models\Slider;
 
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::class]]);
+$this->registerCssFile("@web/css/site.css", ['depends' => [\yii\bootstrap\BootstrapAsset::class]]);
 $this->registerJsFile(Yii::$app->request->baseUrl . 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full', ['depends' => [\yii\web\JqueryAsset::class]]);
 $this->registerJsFile(Yii::$app->request->baseUrl . '/js/2gis.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 $this->registerJsFile(Yii::$app->request->baseUrl . '/js/lists.js', ['depends' => [\yii\web\JqueryAsset::class]]);

@@ -12,6 +12,7 @@ use yii\bootstrap5\NavBar;
 use yii\helpers\Url;
 
 AppAsset::register($this);
+//$this->registerCssFile("@web/css/site.css", ['depends' => [\yii\bootstrap\BootstrapAsset::class]]);
 $this->registerCssFile("@web/css/gm2style.css", ['depends' => [\yii\bootstrap\BootstrapAsset::class]]);
 ?>
 <?php $this->beginPage() ?>

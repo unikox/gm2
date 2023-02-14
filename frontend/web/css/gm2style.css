@@ -65,7 +65,7 @@
     background-color: #fff;
     width: 60%;
     margin: 0 auto;
-    padding-bottom:2%;
+    padding-bottom:10%;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
 }
 .footer{
@@ -157,6 +157,8 @@
 .ContentItemVk{
     position: relative;
     max-width: 100%;
+    margin-bottom: 27px;
+    bottom: -142px;
 }
 .pages-view{
     padding-left: 5%;
