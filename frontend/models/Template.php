@@ -47,13 +47,13 @@ class Template extends \yii\db\ActiveRecord
             'posted' => 'Опубликован',
         ];
     }
-    public function getHeader(){
+    public static function getHeader(){
         $sql ='SELECT header_body FROM `template` WHERE posted = 1';
         $header = Yii::$app->db->createCommand($sql)->queryAll();;
         return $header;
 
     }
-    public function  getFooter(){
+    public static function  getFooter(){
         $sql='SELECT footer_body FROM `template` WHERE posted = 1';
         $footer = Yii::$app->db->createCommand($sql)->queryAll();
         return $footer;

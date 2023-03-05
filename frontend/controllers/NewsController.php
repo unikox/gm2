@@ -13,7 +13,7 @@ use yii\helpers\Url;
 /**
  * NewsController implements the CRUD actions for News model.
  */
-class NewsController extends Controller
+class NewsController extends MotherController
 {
     /**
      * {@inheritdoc}

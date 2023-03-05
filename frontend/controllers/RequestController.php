@@ -12,7 +12,7 @@ use yii\helpers\Url;
 /**
  * RequestController implements the CRUD actions for Request model.
  */
-class RequestController extends Controller
+class RequestController extends MotherController
 {
     /**
      * {@inheritdoc}

@@ -3,27 +3,18 @@
 namespace frontend\controllers;
 
 use app\models\News;
-use app\models\NewsSearch;
+
 use app\models\Pages;
-use common\models\LoginForm;
-use frontend\models\ContactForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResendVerificationEmailForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\VerifyEmailForm;
+use app\models\Hpage;
 use Yii;
-use yii\base\InvalidArgumentException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\web\BadRequestHttpException;
-use yii\web\Controller;
-use yii\helpers\Url;
+
 
 /**
  * Site controller.
  */
-class SiteController extends Controller
+class SiteController extends MotherController
 {
     /**
      * {@inheritdoc}
@@ -56,8 +47,6 @@ class SiteController extends Controller
         ];
     }
 
-
-
     /**
      * Displays homepage.
      *
@@ -65,21 +54,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        
-	xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
-
-
-        $news_page_res = Pages::getCovid();
+        //Главная страница HomePage
         if (!isset($news_page_res)) {
             $news_page_res = [];
         }
+        $hueta = ['hui', 'pizda', 'jigura'];
+        $news_page_res = Pages::getCovid();
+        $hpage_body = Hpage::getBody();
         $news_list = News::getListNews();
         return $this->render('index', [
             'covid_data' => $news_page_res,
-            'news_list' => $news_list
+            'news_list' => $news_list,
+            'hpage_body' => $hpage_body,
+            'ebota' => $hueta
         ]);
-
-
     }
 
     public function actionSw()

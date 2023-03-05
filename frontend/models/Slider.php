@@ -53,8 +53,11 @@ class Slider extends \yii\db\ActiveRecord
         ];
     }
     public function getSliderItems($item_name){
-
         $resItems = $this->find()->where(['item_name' => $item_name,'posted'=>1])->asArray()->orderBy('position')->all();
+        return $resItems;
+    }
+    public static function getItems($item_name){
+        $resItems = self::find()->where(['item_name' => $item_name,'posted'=>1])->asArray()->orderBy('position')->all();
         return $resItems;
     }
 }

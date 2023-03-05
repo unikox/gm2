@@ -48,15 +48,7 @@ class Hpage extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     * @return HpageQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new HpageQuery(get_called_class());
-    }
-    public function getBody(){
+    public static function getBody(){
         $sql = 'SELECT `body` FROM `hpage` ';
         $hPageBody = Yii::$app->db->createCommand($sql)->queryAll();
         return $hPageBody;
