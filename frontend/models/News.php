@@ -73,4 +73,10 @@ class News extends \yii\db\ActiveRecord
         $news_list = Yii::$app->db->createCommand($sql)->queryAll();
         return $news_list;
     }
+    public static function getListNews(){
+        //Возвращает список новостей
+        $sql = 'SELECT `id`,`create_at`,`title` FROM `news`';
+        $news_list = Yii::$app->db->createCommand($sql)->queryAll();
+        return $news_list;
+    }
 }

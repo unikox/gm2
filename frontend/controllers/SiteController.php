@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use app\models\News;
 use app\models\NewsSearch;
 use app\models\Pages;
 use common\models\LoginForm;
@@ -64,23 +65,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'Гимназия №2, Иркутск']);
-        \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'сайт, на сайте, Официальный, Страницы, педагогов, педагоги, дорожная карта, образование,
-        коррекционное, расписание уроков, как добраться, ребенок, детей, школьный, портал, воспитанники, школьники,
-        школьницы']);
-        \Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
-        $news_page = new Pages();
-        $news_page_res = $news_page->getCovid();
+        
+	xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
+
+
+        $news_page_res = Pages::getCovid();
         if (!isset($news_page_res)) {
             $news_page_res = [];
         }
-        $searchNewsModel = new NewsSearch();
-        $dataProviderNews = $searchNewsModel->search(Yii::$app->request->queryParams);
+        $news_list = News::getListNews();
         return $this->render('index', [
-            'searchNewsModel' => $searchNewsModel,
-            'dataNewsProvider' => $dataProviderNews,
             'covid_data' => $news_page_res,
+            'news_list' => $news_list
         ]);
+
+
     }
 
     public function actionSw()

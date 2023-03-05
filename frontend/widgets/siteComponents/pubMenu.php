@@ -12,20 +12,20 @@ class pubMenu extends Widget
     public $sections;
     public $subsections;
     public $sectionsAlone;
-
-    private $start;
-    private $startMenu;
-    private $bodyMenu;
-    private $stopMenu;
-    private $startMenuitem;
-    private $preBodyMenuItem;
-    private $bodyMenuItem;
-    private $stopMenuitem;
-    private $preStopMenuitem;
-    private $menuItemId;
-    private $menuItemUrlId;
-    private $menuEq;
-    private $menuItemHeader;
+    private $res = '';
+    private $start = '';
+    private $startMenu = '';
+    private $bodyMenu = '';
+    private $stopMenu = '';
+    private $startMenuitem = '';
+    private $preBodyMenuItem = '';
+    private $bodyMenuItem = '';
+    private $stopMenuitem = '';
+    private $preStopMenuitem = '';
+    private $menuItemId = 0;
+    private $menuItemUrlId = 0;
+    private $menuEq = false;
+    private $menuItemHeader = 0;
 
     private $gpost;
 
@@ -62,7 +62,7 @@ class pubMenu extends Widget
 
     public function run()
     {
-        echo '<ul class="nav menu-mainmenu">';
+        $this->res .= '<ul class="nav menu-mainmenu">';
         foreach ($this->sections as $key => $variable) {
             foreach ($variable as $key => $value) {
                 if ($key == "id") {
@@ -70,17 +70,17 @@ class pubMenu extends Widget
                 }
                 if ($key == "name") {
 
-                    echo '<li>';
+                    $this->res .= '<li>';
                     if ($this->menuItemHeader != $this->menuItemId) {
                         if ($value == "Главная") {
-                            echo '<a  href="/" class="menuitem">' . $value . "</a>";
+                            $this->res .= '<a  href="/" class="menuitem">' . $value . "</a>";
 
                         } elseif ($value == "Новости") {
-                            echo '<a href="/news" class="menuitem">' . $value . "</a>";
+                            $this->res .= '<a href="/news" class="menuitem">' . $value . "</a>";
                         } else {
-                            echo '<a href="#group_menu' . $this->menuItemId . '" class="accordion-toggle collapsed menu-collapsed"  data-toggle="collapse">' . $value . '</a>';
+                            $this->res .= '<a href="#group_menu' . $this->menuItemId . '" class="accordion-toggle collapsed menu-collapsed"  data-toggle="collapse">' . $value . '</a>';
                         }
-                        echo '<div id="group_menu' . $this->menuItemId . '" class="panel-collapse collapse"><ul>';
+                        $this->res .= '<div id="group_menu' . $this->menuItemId . '" class="panel-collapse collapse"><ul>';
                         $this->menuItemHeader = $this->menuItemId;
                     }
                     foreach ($this->subsections as $subsectionskey => $subsectionsvalue) {
@@ -89,9 +89,9 @@ class pubMenu extends Widget
                                 $this->menuItemUrlId = (int)$subsectvalue;
                             }
                             if ($subsectkey == "name" and $this->menuEq) {
-                                echo '<li>';
-                                echo '<a  href="/page/' . $this->menuItemUrlId . '">' . $subsectvalue . '</a>';
-                                echo '</li>';
+                                $this->res .= '<li>';
+                                $this->res .= '<a  href="/page/' . $this->menuItemUrlId . '">' . $subsectvalue . '</a>';
+                                $this->res .= '</li>';
                                 $this->menuEq = false;
                             }
                             if ($subsectkey == 'menuitem_id') {
@@ -101,23 +101,19 @@ class pubMenu extends Widget
                             }
                         }
                     }
-                    echo "</ul>";
-                    echo "</div>";
-                    echo "</li>";
+                    $this->res .= "         </ul>";
+                    $this->res .= "     </div>";
+                    $this->res .= "</li>";
                 }
             };
         }
         foreach ($this->sectionsAlone as $SectionItem){
             //var_dump($SectionItem);
-            echo '<li>';
-            echo '<a  href="/page/' . $SectionItem['id'] . '" class="menuitem" >' . $SectionItem['name'] . '</a>';
-            echo '</li>';
+            $this->res .= '<li>';
+            $this->res .= '<a  href="/page/' . $SectionItem['id'] . '" class="menuitem" >' . $SectionItem['name'] . '</a>';
+            $this->res .= '</li>';
         }
-        echo "</ul>";
-        return "
-					
-				";
-
+        $this->res .= "</ul>";
+        return $this->res;
     }
-
 }

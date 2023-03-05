@@ -2,7 +2,6 @@
 
 namespace frontend\widgets\siteComponents;
 use yii\base\Widget;
-//$this->registerCssFile("@web/css/message.css", ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 
 class pubFooter extends Widget
 {

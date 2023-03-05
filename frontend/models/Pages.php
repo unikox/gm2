@@ -54,9 +54,9 @@ class Pages extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getCovid()
+    public static function getCovid()
     {
-        $res = $this->find()->Select('page_body')->where(['id' => 26])->asArray()->One();
+        $res = self::find()->Select('page_body')->where(['id' => 26])->asArray()->One();
 
         return $res;
     }

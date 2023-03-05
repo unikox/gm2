@@ -2,9 +2,15 @@
 
 use app\models\Hpage;
 use frontend\widgets\siteComponents\pubHomepage;
+use frontend\widgets\siteComponents\pubNews;
 use yii\widgets\ListView;
 use yii\helpers\Url;
 
+\Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'Гимназия №2, Иркутск']);
+\Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => 'сайт, на сайте, Официальный, Страницы, педагогов, педагоги, дорожная карта, образование,
+коррекционное, расписание уроков, как добраться, ребенок, детей, школьный, портал, воспитанники, школьники,
+школьницы']);
+\Yii::$app->view->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => Url::to(['/favicon.png'])]);
 $this->registerJsFile(Yii::$app->request->baseUrl.'/js/news.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 /* @var $this yii\web\View */
@@ -16,7 +22,6 @@ $this->title = 'Гимназия №2, Университетский микро
     //var_dump($mit->getSections());
     echo pubHomepage::widget([
         'HpageBody' => $hpage->getBody(),
- //       'subsections' =>$mit->getSubSections(),
     ]);
     ?>
     <div class="news_pager_box">
@@ -27,15 +32,7 @@ $this->title = 'Гимназия №2, Университетский микро
         </div>
         <div class="news_item_container">
             <div class="news_item_box">
-                <?= ListView::widget([
-                    'dataProvider' => $dataNewsProvider,
-                    'itemView' => '_news__item',
-                    'summary' => false,
-                    'viewParams' => [
-                        'fullView' => true,
-                        'context' => 'main-page',
-                    ],
-                ]); ?>
+                <?= pubNews::widget(['news_list' => $news_list]);?>
             </div>
             <div class="news_item_covid">
                     <?php
