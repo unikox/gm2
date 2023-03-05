@@ -54,7 +54,12 @@ class SiteController extends MotherController
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
         //Главная страница HomePage
+=======
+        
+        $news_page_res = Pages::getCovid();
+>>>>>>> af7ba71e5d0429e9cb6ba24a5f8c2a77742c8331
         if (!isset($news_page_res)) {
             $news_page_res = [];
         }
