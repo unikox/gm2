@@ -66,9 +66,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         
-	xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
-
-
         $news_page_res = Pages::getCovid();
         if (!isset($news_page_res)) {
             $news_page_res = [];
